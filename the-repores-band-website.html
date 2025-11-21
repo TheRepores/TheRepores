@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Repores - Melbourne Australian Rock Band</title>
+    <meta name="description" content="Official website of The Repores, Melbourne's premier Australian rock band. Explore our music, services, and join our community.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#dc2626",
+                        secondary: "#1e293b",
+                        accent: "#f59e0b"
+                    },
+                    fontFamily: {
+                        'heading': ['"Rock Salt"', 'cursive'],
+                        'body': ['"Open Sans"', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Rock+Salt&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-gray-900 text-white font-body">
+    <!-- Header -->
+    <header class="bg-secondary shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-heading text-primary">The Repores</h1>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="nav-link hover:text-primary transition-colors">Home</a>
+                    <a href="#socials" class="nav-link hover:text-primary transition-colors">Socials</a>
+                    <a href="#contact" class="nav-link hover:text-primary transition-colors">Contact</a>
+                    <a href="#promo" class="nav-link hover:text-primary transition-colors">Promo Packages</a>
+                    <a href="#content" class="nav-link hover:text-primary transition-colors">Content</a>
+                    <a href="#services" class="nav-link hover:text-primary transition-colors">Services</a>
+                    <a href="#testimonials" class="nav-link hover:text-primary transition-colors">Testimonials</a>
+                    <a href="#signup" class="bg-primary px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">Join Us</a>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-4 bg-secondary p-4 rounded-lg">
+                <a href="#home" class="block nav-link hover:text-primary transition-colors">Home</a>
+                <a href="#socials" class="block nav-link hover:text-primary transition-colors">Socials</a>
+                <a href="#contact" class="block nav-link hover:text-primary transition-colors">Contact</a>
+                <a href="#promo" class="block nav-link hover:text-primary transition-colors">Promo Packages</a>
+                <a href="#content" class="block nav-link hover:text-primary transition-colors">Content</a>
+                <a href="#services" class="block nav-link hover:text-primary transition-colors">Services</a>
+                <a href="#testimonials" class="block nav-link hover:text-primary transition-colors">Testimonials</a>
+                <a href="#signup" class="block bg-primary px-4 py-2 rounded-lg hover:bg-red-700 transition-colors text-center">Join Us</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="bg-gradient-to-br from-gray-800 to-secondary py-20">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-5xl md:text-7xl font-heading text-primary mb-6">THE REPORES</h2>
+                    <p class="text-xl md:text-2xl text-gray-300 mb-8">Melbourne's Premier Australian Rock Band</p>
+                    <p class="text-lg text-gray-400 mb-12 max-w-2xl mx-auto">Raw energy meets authentic Australian rock. Experience the sound that's taking Melbourne by storm.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="#signup" class="bg-primary px-8 py-3 rounded-lg hover:bg-red-700 transition-colors text-lg font-semibold">Become a Member</a>
+                        <a href="#content" class="border-2 border-primary px-8 py-3 rounded-lg hover:bg-primary transition-colors text-lg font-semibold">Listen Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Socials Section -->
+        <section id="socials" class="py-16 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-heading text-center text-primary mb-12">Follow The Repores</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                    <div class="bg-secondary p-6 rounded-lg text-center hover:transform hover:scale-105 transition-transform">
+                        <i class="fab fa-spotify text-4xl text-green-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Spotify</h3>
+                        <p class="text-gray-400 mb-4">Stream our latest tracks</p>
+                        <a href="#" class="text-primary hover:text-red-400">Follow Now</a>
+                    </div>
+                    <div class="bg-secondary p-6 rounded-lg text-center hover:transform hover:scale-105 transition-transform">
+                        <i class="fab fa-instagram text-4xl text-pink-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Instagram</h3>
+                        <p class="text-gray-400 mb-4">Behind the scenes content</p>
+                        <a href="#" class="text-primary hover:text-red-400">Follow Now</a>
+                    </div>
+                    <div class="bg-secondary p-6 rounded-lg text-center hover:transform hover:scale-105 transition-transform">
+                        <i class="fab fa-youtube text-4xl text-red-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">YouTube</h3>
+                        <p class="text-gray-400 mb-4">Music videos and live performances</p>
+                        <a href="#" class="text-primary hover:text-red-400">Subscribe</a>
+                    </div>
+                    <div class="bg-secondary p-6 rounded-lg text-center hover:transform hover:scale-105 transition-transform">
+                        <i class="fab fa-facebook text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-semibold mb-2">Facebook</h3>
+                        <p class="text-gray-400 mb-4">Event updates and news</p>
+                        <a href="#" class="text-primary hover:text-red-400">Like Page</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-heading text-center text-primary mb-12">Get In Touch</h2>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope text-primary mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Email</h4>
+                                    <p class="text-gray-400">booking@therepores.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone text-primary mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Phone</h4>
+                                    <p class="text-gray-400">+61 400 123 456</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt text-primary mt-1 mr-4"></i>
+                                <div>
+                                    <h4 class="font-semibold">Location</h4>
+                                    <p class="text-gray-400">Melbourne, Australia</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-6">Send Us a Message</h3>
+                        <form class="space-y-4">
+                            <div>
+                                <input type="text" placeholder="Your Name" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary">
+                            </div>
+                            <div>
+                                <input type="email" placeholder="Your Email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary">
+                            </div>
+                            <div>
+                                <textarea placeholder="Your Message" rows="5" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary"></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary px-6 py-3 rounded-lg hover:bg-red-700 transition-colors w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Packages Section -->
+        <section id="promo" class="py-16 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-heading text-center text-primary mb-12">Promo Packages</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-secondary p-8 rounded-lg border-2 border-gray-700 hover:border-primary transition-colors">
+                        <h3 class="text-2xl font-semibold text-center mb-4">Basic Package</h3>
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-primary">$299</span>
+                            <span class="text-gray-400">/show</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>2-hour performance</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>Basic sound setup</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>Set list consultation</span>
+                            </li>
+                        </ul>
+                        <button class="bg-primary w-full py-3 rounded-lg hover:bg-red-700 transition-colors">Book Now</button>
+                    </div>
+                    <div class="bg-secondary p-8 rounded-lg border-2 border-primary transform scale-105">
+                        <h3 class="text-2xl font-semibold text-center mb-4">Premium Package</h3>
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-primary">$599</span>
+                            <span class="text-gray-400">/show</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>3-hour performance</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>Professional sound & lighting</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>Custom set list</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>Soundcheck included</span>
+                            </li>
+                        </ul>
+                        <button class="bg-primary w-full py-3 rounded-lg hover:bg-red-700 transition-colors">Book Now</button>
+                    </div>
+                    <div class="bg-secondary p-8 rounded-lg border-2 border-gray-700 hover:border-primary transition-colors">
+                        <h3 class="text-2xl font-semibold text-center mb-4">Festival Package</h3>
+                        <div class="text-center mb-6">
+                            <span class="text-4xl font-bold text-primary">$899</span>
+                            <span class="text-gray-400">/show</span>
+                        </div>
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>Full festival setup</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>Extended performance time</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>Backstage requirements</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span>Dedicated crew</span>
+                            </li>
+                        </ul>
+                        <button class="bg-primary w-full py-3 rounded-lg hover:bg-red-700 transition-colors">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Content Section -->
+        <section id="content" class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-heading text-center text-primary mb-12">Our Content</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-secondary rounded-lg overflow-hidden hover:transform hover:scale-105 transition-transform">
+                        <img src="https://picsum.photos/400/300?random=1" alt="The Repores live performance" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Latest Single: "Melbourne Nights"</h3>
+                            <p class="text-gray-400 mb-4">Our newest release capturing the energy of Melbourne's nightlife.</p>
+                            <a href="#" class="text-primary hover:text-red-400">Listen Now</a>
+                        </div>
+                    </div>
+                    <div class="bg-secondary rounded-lg overflow-hidden hover:transform hover:scale-105 transition-transform">
+                        <img src="https://picsum.photos/400/300?random=2" alt="Band in studio recording" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Studio Sessions</h3>
+                            <p class="text-gray-400 mb-4">Behind the scenes footage from our latest recording sessions.</p>
+                            <a href="#" class="text-primary hover:text-red-400">Watch Now</a>
+                        </div>
+                    </div>
+                    <div class="bg-secondary rounded-lg overflow-hidden hover:transform hover:scale-105 transition-transform">
+                        <img src="https://picsum.photos/400/300?random=3" alt="Live concert crowd" class="w-full h-48 object-cover" loading="lazy">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-3">Live Performances</h3>
+                            <p class="text-gray-400 mb-4">Highlights from our recent shows across Melbourne venues.</p>
+                            <a href="#" class="text-primary hover:text-red-400">View Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-16 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-heading text-center text-primary mb-12">Our Services</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                    <div class="bg-secondary p-8 rounded-lg">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-music text-5xl text-primary mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-4">Live Performances</h3>
+                            <p class="text-gray-400">High-energy rock performances for venues, festivals, and private events across Melbourne and beyond.</p>
+                        </div>
+                    </div>
+                    <div class="bg-secondary p-8 rounded-lg">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-record-vinyl text-5xl text-primary mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-4">Music Production</h3>
+                            <p class="text-gray-400">Professional recording and production services for our original tracks and collaborations.</p>
+                        </div>
+                    </div>
+                    <div class="bg-secondary p-8 rounded-lg">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-users text-5xl text-primary mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-4">Workshops</h3>
+                            <p class="text-gray-400">Music workshops and masterclasses for aspiring musicians and schools.</p>
+                        </div>
+                    </div>
+                    <div class="bg-secondary p-8 rounded-lg">
+                        <div class="text-center mb-6">
+                            <i class="fas fa-guitar text-5xl text-primary mb-4"></i>
+                            <h3 class="text-2xl font-semibold mb-4">Session Musicians</h3>
+                            <p class="text-gray-400">Available for session work, collaborations, and featured performances.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="py-16 bg-gray-900">
+            <div class="container mx-auto px-4">
+                <h2 class="text-4xl font-heading text-center text-primary mb-12">What People Say</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-secondary p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold mr-4">JS</div>
+                            <div>
+                                <h4 class="font-semibold">John Smith</h4>
+                                <p class="text-gray-400 text-sm">Venue Manager</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"The Repores brought incredible energy to our venue. Professional, talented, and the crowd loved them!"</p>
+                    </div>
+                    <div class="bg-secondary p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold mr-4">MJ</div>
+                            <div>
+                                <h4 class="font-semibold">Maria Johnson</h4>
+                                <p class="text-gray-400 text-sm">Event Organizer</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"Working with The Repores was seamless. Their professionalism and musical talent made our event unforgettable."</p>
+                    </div>
+                    <div class="bg-secondary p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-semibold mr-4">DP</div>
+                            <div>
+                                <h4 class="font-semibold">David Park</h4>
+                                <p class="text-gray-400 text-sm">Music Critic</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">"Authentic Australian rock at its finest. The Repores capture the spirit of Melbourne's music scene perfectly."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sign Up Section -->
+        <section id="signup" class="py-16 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="max-w-2xl mx-auto bg-secondary rounded-lg p-8">
+                    <h2 class="text-4xl font-heading text-center text-primary mb-6">Join The Repores Community</h2>
+                    <p class="text-gray-400 text-center mb-8">Become a member to get exclusive content, early access to tickets, and behind-the-scenes updates.</p>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-300 mb-2">First Name</label>
+                                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-300 mb-2">Last Name</label>
+                                <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary" required>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Email Address</label>
+                            <input type="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Location</label>
+                            <input type="text" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary" placeholder="City, Country">
+                        </div>
+                        <div>
+                            <label class="block text-gray-300 mb-2">Why do you want to join?</label>
+                            <textarea rows="4" class="w-full bg-gray-800 border border-gray-700 rounded-lg px-4 py-3 focus:outline-none focus:border-primary"></textarea>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="newsletter" class="mr-3">
+                            <label for="newsletter" class="text-gray-300">I want to receive newsletter updates</label>
+                        </div>
+                        <button type="submit" class="bg-primary w-full py-4 rounded-lg hover:bg-red-700 transition-colors text-lg font-semibold">Become a Member</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-secondary py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-heading text-primary mb-4">The Repores</h3>
+                    <p class="text-gray-400">Melbourne's premier Australian rock band, bringing raw energy and authentic sound to stages across Australia.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#socials" class="text-gray-400 hover:text-primary transition-colors">Socials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Contact</a></li>
+                        <li><a href="#signup" class="text-gray-400 hover:text-primary transition-colors">Join Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#promo" class="text-gray-400 hover:text-primary transition-colors">Promo Packages</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-primary transition-colors">Live Performances</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-primary transition-colors">Music Production</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-primary transition-colors">Workshops</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors text-2xl"><i class="fab fa-spotify"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors text-2xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors text-2xl"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors text-2xl"><i class="fab fa-facebook"></i></a>
+                    </div>
+                    <div class="mt-4">
+                        <p class="text-gray-400">booking@therepores.com</p>
+                        <p class="text-gray-400">+61 400 123 456</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 The Repores. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        document.addEventListener("DOMContentLoaded", function() {
+            const mobileMenuButton = document.getElementById("mobile-menu-button");
+            const mobileMenu = document.getElementById("mobile-menu");
+            
+            mobileMenuButton.addEventListener("click", function() {
+                mobileMenu.classList.toggle("hidden");
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute("href"));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: "smooth",
+                            block: "start"
+                        });
+                        // Close mobile menu if open
+                        mobileMenu.classList.add("hidden");
+                    }
+                });
+            });
+            
+            // Navigation link data
+            const navigationItems = [
+                { "id": 1, "label": "Home", "href": "#home" },
+                { "id": 2, "label": "Socials", "href": "#socials" },
+                { "id": 3, "label": "Contact", "href": "#contact" },
+                { "id": 4, "label": "Promo Packages", "href": "#promo" },
+                { "id": 5, "label": "Content", "href": "#content" },
+                { "id": 6, "label": "Services", "href": "#services" },
+                { "id": 7, "label": "Testimonials", "href": "#testimonials" },
+                { "id": 8, "label": "Join Us", "href": "#signup" }
+            ];
+            
+            // Form submission handling
+            const forms = document.querySelectorAll("form");
+            forms.forEach(form => {
+                form.addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    alert("Thank you for your message! We'll get back to you soon.");
+                    form.reset();
+                });
+            });
+        });
+    </script>
+</body>
+</html>
