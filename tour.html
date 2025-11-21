@@ -1,76 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>The Repores - Tour Dates</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Helvetica&display=swap" rel="stylesheet" />
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'repores-red': '#eb1d4c',
-                        'repores-purple': '#680ed2',
-                        'repores-black': '#111',
-                        'repores-white': '#fafafa'
-                    },
-                    fontFamily: {
-                        'helvetica': ['Helvetica', 'Arial', 'sans-serif']
-                    }
-                }
-            }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Repores - Tour Dates</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Trebuchet+MS&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'repores-red': '#eb1d4c',
+            'repores-purple': '#680ed2',
+            'repores-black': '#111111',
+            'repores-white': '#fafafa'
+          },
+          fontFamily: {
+            'trebuchet': ['Trebuchet MS', 'sans-serif']
+          }
         }
-    </script>
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Trebuchet MS', sans-serif;
+    }
+    .nav-link {
+      transition: color 0.3s;
+    }
+    .nav-link:hover {
+      color: #eb1d4c; /* repores-red */
+    }
+    .pulse-animation {
+      animation: pulse 2.5s infinite ease-in-out;
+      display: inline-block;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1);}
+      50% { transform: scale(1.08);}
+    }
+    /* Footer icon size and hover */
+    .social-icon {
+      font-size: 1.75rem;
+      transition: color 0.3s;
+      color: #fafafa;
+    }
+    .social-icon:hover {
+      color: #680ed2; /* repores-purple */
+    }
+    /* Mailing list container wide not stacking */
+    .mailing-list-wrapper iframe {
+      width: 100% !important;
+      max-width: 800px;
+      height: 220px;
+      border-radius: 6px;
+      border: none;
+    }
+    /* Image placeholder with shadow and skew */
+    .image-placeholder {
+      background-color: #680ed2;
+      width: 100%;
+      max-width: 400px;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(107,0,255,0.3);
+      transform: skew(-5deg);
+      margin: 0 auto;
+    }
+  </style>
 </head>
-<body class="bg-repores-white text-repores-black min-h-screen flex flex-col">
-    <!-- Navbar -->
-    <header class="bg-repores-black sticky top-0 z-50 shadow-lg">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-bold text-repores-red">THE REPORES</h1>
-                <p class="text-sm text-repores-white opacity-80">Melbourne Rock Band</p>
-            </div>
-            <nav class="flex gap-4 font-bold">
-                <a href="index.html" class="text-repores-white hover:text-repores-red">HOME</a>
-                <a href="tour.html" class="text-repores-red">TOUR DATES</a>
-                <a href="news.html" class="text-repores-white hover:text-repores-red">NEWS</a>
-                <a href="music.html" class="text-repores-white hover:text-repores-red">MUSIC</a>
-                <a href="contact.html" class="text-repores-white hover:text-repores-red">CONTACT</a>
-            </nav>
-        </div>
-    </header>
+<body class="bg-repores-white text-repores-black flex flex-col min-h-screen">
 
-    <!-- Tour Dates Content -->
-    <section class="py-16 px-4 bg-repores-white flex-1">
-        <div class="container mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-4 text-repores-purple">TOUR DATES</h2>
-            <p class="text-center mb-12 text-lg">Catch us live across Australia and beyond!</p>
-            <div class="bg-repores-black rounded-lg p-6 mb-12">
-                <iframe src="https://bandsintown.com/artist/15563423?came_from=267&font=Helvetica&header_text_color=%23111111&background_color=%23fafafa&date_color=%23680ed2&text_color=%23111111"
-                width="100%" height="600" style="border: none; border-radius: 8px;"></iframe>
-            </div>
-        </div>
+  <!-- Header / Navigation -->
+  <header class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg">
+    <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <h1 class="text-3xl font-extrabold text-repores-red pulse-animation select-none">THE REPORES</h1>
+        <p class="uppercase text-sm opacity-80 tracking-widest">Melbourne Rock Band</p>
+      </div>
+      <nav class="flex gap-6 text-lg font-semibold uppercase tracking-wide select-none">
+        <a href="index.html" class="nav-link hover:text-repores-red">HOME</a>
+        <a href="tour.html" class="nav-link text-repores-red">TOUR DATES</a>
+        <a href="news.html" class="nav-link hover:text-repores-red">NEWS</a>
+        <a href="music.html" class="nav-link hover:text-repores-red">MUSIC</a>
+        <a href="contact.html" class="nav-link hover:text-repores-red">CONTACT</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-grow container mx-auto px-6 py-12 max-w-6xl">
+    <h2 class="text-5xl font-bold mb-6 text-center text-repores-purple">Catch Us Live!</h2>
+    <p class="text-center text-lg mb-12 max-w-3xl mx-auto">Experience The Repores live across Australia and beyond. Don't miss the high-energy shows and raw rock power!</p>
+
+    <section aria-label="Tour Dates Widget" class="mb-16 shadow-xl rounded-lg overflow-hidden bg-repores-white border border-repores-purple">
+      <!-- Latest Bandsintown Widget (as of 2025) -->
+      <iframe
+        src="https://bandsintown.com/artist/15563423?came_from=267&font=Trebuchet%20MS&header_text_color=%23111111&background_color=%23fafafa&date_color=%23680ed2&text_color=%23111111"
+        width="100%"
+        height="650"
+        loading="lazy"
+        style="border:none;"
+        title="The Repores Tour Dates">
+      </iframe>
     </section>
 
-    <!-- Contact Form Button -->
-    <div class="py-8 text-center">
-        <a href="contact.html" class="bg-repores-red text-white px-6 py-3 rounded-full font-bold hover:bg-opacity-90 transition">CONTACT US</a>
-    </div>
+    <!-- Image placeholder: replace with your own -->
+    <aside aria-label="Band photo placeholder" class="mb-16">
+      <div class="image-placeholder"></div>
+      <p class="text-center italic text-repores-purple mt-4">Your own band photo or artwork here</p>
+    </aside>
 
-    <!-- Footer with social icons -->
-    <footer class="mt-auto bg-repores-black text-center py-4">
-        <div class="flex justify-center gap-4 mb-2">
-            <a href="https://www.instagram.com/the_repores/" target="_blank" class="text-white hover:text-repores-purple"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="https://www.youtube.com/@therepores" target="_blank" class="text-white hover:text-repores-purple"><i class="fab fa-youtube fa-lg"></i></a>
-            <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" class="text-white hover:text-repores-purple"><i class="fab fa-spotify fa-lg"></i></a>
-            <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" class="text-white hover:text-repores-purple"><i class="fab fa-apple fa-lg"></i></a>
-            <a href="https://www.redbubble.com/people/TheRepores/shop?asc=u" target="_blank" class="text-white hover:text-repores-purple"><i class="fab fa-redbubble fa-lg"></i></a>
-        </div>
-        <p class="text-sm opacity-60">&copy; 2025 The Repores</p>
-    </footer>
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  </main>
+
+  <!-- Footer with Socials and Contact Button -->
+  <footer class="bg-repores-black text-repores-white py-8 shadow-inner">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <!-- Social icons -->
+      <div class="flex gap-6 text-center md:text-left">
+        <a href="https://www.instagram.com/the_repores/" target="_blank" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@therepores" target="_blank" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
+        <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" aria-label="Spotify" class="social-icon"><i class="fab fa-spotify"></i></a>
+        <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" aria-label="Apple Music" class="social-icon"><i class="fab fa-apple"></i></a>
+        <a href="https://www.redbubble.com/people/TheRepores/shop?asc=u" target="_blank" aria-label="Redbubble" class="social-icon"><i class="fas fa-shopping-bag"></i></a>
+      </div>
+      <!-- Contact us button -->
+      <a href="contact.html" class="bg-repores-red hover:bg-red-600 text-white font-bold rounded-full px-6 py-3 uppercase tracking-wide select-none shadow-lg transition">CONTACT US</a>
+    </div>
+    <p class="text-center opacity-60 mt-6 text-sm">&copy; 2025 The Repores | Melbourne, Australia</p>
+  </footer>
+
+  <!-- FontAwesome Icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
 </body>
 </html>
