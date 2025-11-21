@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base target="_self" />
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>The Repores - Melbourne Rock Band</title>
+    <meta name="description" content="Official website of The Repores, a high-energy rock band from Melbourne, Australia. Discover our music, tour dates, news, and join the Rhad Pack!" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Helvetica&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap" rel="stylesheet" />
     <script>
         tailwind.config = {
             theme: {
@@ -13,81 +15,109 @@
                     colors: {
                         'repores-red': '#eb1d4c',
                         'repores-purple': '#680ed2',
-                        'repores-black': '#111',
+                        'repores-black': '#111111',
                         'repores-white': '#fafafa'
                     },
                     fontFamily: {
-                        'helvetica': ['Helvetica', 'Arial', 'sans-serif']
+                        'trebuchet': ['Trebuchet MS', 'sans-serif']
                     }
                 }
             }
-        }
+        };
     </script>
     <style>
-        body { font-family: 'Helvetica', sans-serif; }
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
     </style>
 </head>
-<body class="bg-repores-white text-repores-black min-h-screen flex flex-col">
-    <!-- Navbar -->
-    <header class="bg-repores-black sticky top-0 z-50 shadow-lg">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-bold text-repores-red">THE REPORES</h1>
-                <p class="text-sm text-repores-white opacity-80">Melbourne Rock Band</p>
+<body class="bg-repores-white text-repores-black font-trebuchet min-h-screen flex flex-col">
+    <!-- Navigation -->
+    <header class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-4 md:mb-0">
+                <h1 class="text-2xl font-bold text-repores-red pulse-animation">THE REPORES</h1>
+                <p class="text-sm opacity-80">Melbourne Rock Band</p>
             </div>
-            <nav class="flex gap-4 font-bold">
-                <a href="index.html" class="text-repores-white hover:text-repores-red">HOME</a>
-                <a href="tour.html" class="text-repores-white hover:text-repores-red">TOUR DATES</a>
-                <a href="news.html" class="text-repores-white hover:text-repores-red">NEWS</a>
-                <a href="music.html" class="text-repores-white hover:text-repores-red">MUSIC</a>
-                <a href="contact.html" class="text-repores-white hover:text-repores-red">CONTACT</a>
-            </nav>
-        </div>
+            <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+                <a href="index.html" class="text-repores-red font-bold">HOME</a>
+                <a href="tour.html" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">TOUR DATES</a>
+                <a href="news.html" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">NEWS</a>
+                <a href="music.html" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">MUSIC</a>
+            </div>
+        </nav>
     </header>
 
-    <!-- Body content -->
-    <section class="py-20 px-4 text-center">
-        <h2 class="text-5xl md:text-6xl font-bold mb-4">ROCK THE NIGHT</h2>
-        <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">High-energy rock from Melbourne. Feel the power of The Repores.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <a href="music.html" class="bg-repores-white text-repores-purple px-8 py-3 rounded-full font-bold hover:bg-opacity-90 transition">LISTEN NOW</a>
-            <a href="tour.html" class="border-2 border-repores-white text-repores-white px-8 py-3 rounded-full font-bold hover:bg-repores-white hover:text-repores-purple transition">TOUR DATES</a>
-        </div>
-        <!-- Latest Release -->
-        <div class="max-w-4xl mx-auto mb-16 p-4 border rounded-lg border-repores-purple bg-white">
-            <h3 class="text-2xl font-bold mb-4 text-repores-purple">"MIDNIGHT REVOLUTION"</h3>
-            <p class="mb-4">Our latest single is taking the airwaves by storm. Raw energy meets melodic perfection.</p>
-            <a href="music.html" class="bg-repores-red text-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 transition">STREAM NOW</a>
+    <!-- Home Page -->
+    <section class="bg-repores-purple text-repores-white py-20 flex-grow">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6">ROCK THE NIGHT</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">High-energy rock music from the heart of Melbourne. Experience the raw power of The Repores.</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="music.html" class="bg-repores-white text-repores-purple px-8 py-3 rounded-full font-bold text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105">LISTEN NOW</a>
+                <a href="tour.html" class="border-2 border-repores-white text-repores-white px-8 py-3 rounded-full font-bold text-lg hover:bg-repores-white hover:text-repores-purple transition-all duration-300">TOUR DATES</a>
+            </div>
         </div>
     </section>
 
-    <!-- Join the Pack & Footer -->
-    <section class="bg-repores-black text-repores-white p-4 md:p-8 flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-8">
-        <div>
-            <!-- Bandsintown Join -->
-            <iframe src="https://bandsintown.com/artist/15563423/email_signup_form?headerTextColor=rgba(17,17,17,1)&backgroundColor=rgba(250,250,250,1)&ctaBackgroundColor=rgba(104,14,210,1)&title=JOIN THE RHAD PACK&headerTextStyle=normal&headerText=Sign Up for Our Mailing List&font=Helvetica&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=0px&ctaBorderColor=rgba(0,180,179,1)&ctaFontColor=rgba(255,255,255,1)&alignment=center&emailInputField=show&ctaLabel=Sign-Up&layout=wide&locale=en" width="100%" height="220px" title="newsletter-widget"></iframe>
+    <section class="py-16 bg-repores-white">
+        <div class="container mx-auto px-4">
+            <h3 class="text-3xl font-bold text-center mb-12 text-repores-black">LATEST RELEASE</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="text-center md:text-left">
+                    <h4 class="text-2xl font-bold text-repores-purple mb-4">"SILVER BEANS"</h4>
+                    <p class="text-lg mb-6">Our latest single is now streaming. Dive into the sound of The Repores.</p>
+                    <a href="https://open.spotify.com/album/3kQfgYlr7sfD3X3Q4bt0qe?si=Gdn5X-QlR9ex0s7w8vshjQ" target="_blank" rel="noopener noreferrer" class="bg-repores-red text-repores-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 transition-colors duration-300 inline-block">STREAM ON SPOTIFY</a>
+                </div>
+                <div class="flex justify-center">
+                    <img src="https://i.scdn.co/image/ab67616d0000b2734d0737f6e7aa7055f94e93c4" alt="Silver Beans Album Cover" class="rounded-lg shadow-2xl transform hover:rotate-2 transition-transform duration-300" loading="lazy" width="400" height="400" />
+                </div>
+            </div>
         </div>
-        <button id="contactBtn" class="mt-4 md:mt-0 bg-repores-red px-4 py-2 rounded-full font-bold hover:bg-opacity-90 transition">CONTACT US</button>
     </section>
 
-    <!-- Social Icons at Bottom & Contact page link -->
-    <footer class="mt-auto bg-repores-black text-center py-4">
-        <div class="flex justify-center gap-4 mb-2">
-            <a href="https://www.instagram.com/the_repores/" target="_blank" class="text-white hover:text-repores-purple"><i class="fab fa-instagram fa-lg"></i></a>
-            <a href="https://www.youtube.com/@therepores" target="_blank" class="text-white hover:text-repores-purple"><i class="fab fa-youtube fa-lg"></i></a>
-            <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" class="text-white hover:text-repores-purple"><i class="fab fa-spotify fa-lg"></i></a>
-            <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" class="text-white hover:text-repores-purple"><i class="fab fa-apple fa-lg"></i></a>
-            <a href="https://www.redbubble.com/people/TheRepores/shop?asc=u" target="_blank" class="text-white hover:text-repores-purple"><i class="fab fa-redbubble fa-lg"></i></a>
+    <section class="py-16 bg-repores-black text-repores-white">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-8">THE BAND</h3>
+            <!-- Potential band details can be added here -->
         </div>
-        <p class="text-sm opacity-60">&copy; 2025 The Repores</p>
+    </section>
+
+    <!-- Contact Button with Social Icons -->
+    <div class="bg-repores-white py-6 text-center border-t border-gray-300">
+        <a href="contact.html" class="inline-flex items-center gap-4 bg-repores-red text-repores-white font-bold py-3 px-6 rounded-full hover:bg-opacity-90 transition duration-300">
+            CONTACT US
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20M12 2l10 10-10 10"/></svg>
+        </a>
+    </div>
+
+    <!-- Footer with Social Links -->
+    <footer class="bg-repores-black text-repores-white py-8 mt-auto">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8">
+            <div>
+                <h3 class="text-xl font-bold text-repores-red mb-2">THE REPORES</h3>
+                <p class="text-sm opacity-80">Melbourne, Australia</p>
+            </div>
+            <div class="flex gap-6 text-2xl">
+                <a href="https://www.instagram.com/the_repores/" target="_blank" rel="noopener" aria-label="Instagram" class="hover:text-repores-red"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@therepores" target="_blank" rel="noopener" aria-label="YouTube" class="hover:text-repores-red"><i class="fab fa-youtube"></i></a>
+                <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" rel="noopener" aria-label="Spotify" class="hover:text-repores-red"><i class="fab fa-spotify"></i></a>
+                <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" rel="noopener" aria-label="Apple Music" class="hover:text-repores-red"><i class="fab fa-apple"></i></a>
+                <a href="https://www.redbubble.com/people/TheRepores/shop?asc=u" target="_blank" rel="noopener" aria-label="Redbubble" class="hover:text-repores-red"><i class="fas fa-shopping-bag"></i></a>
+            </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p>&copy; 2024 The Repores. All rights reserved.</p>
+        </div>
     </footer>
-
-    <!-- Font Awesome JS -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script>
-        document.getElementById('contactBtn').addEventListener('click', () => {
-            window.location.href='contact.html';
-        });
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
