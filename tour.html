@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Repores - Tour Dates</title>
+    <meta name="description" content="Official website of The Repores, a high-energy rock band from Melbourne, Australia. Discover tour dates and catch live shows!">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'repores-red': '#eb1d4c',
+                        'repores-purple': '#680ed2',
+                        'repores-black': '#111111',
+                        'repores-white': '#fafafa'
+                    },
+                    fontFamily: {
+                        'trebuchet': ['Trebuchet MS', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Trebuchet MS', sans-serif;
+        }
+        .pulse-animation {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body class="bg-repores-white text-repores-black font-trebuchet min-h-screen">
+    <!-- Navigation -->
+    <header class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg">
+        <nav class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h1 class="text-2xl font-bold text-repores-red pulse-animation">THE REPORES</h1>
+                    <p class="text-sm text-repores-white opacity-80">Melbourne Rock Band</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+                    <a href="index.html" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">HOME</a>
+                    <a href="tour.html" class="text-repores-red font-bold">TOUR DATES</a>
+                    <a href="news.html" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">NEWS</a>
+                    <a href="music.html" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">MUSIC</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Tour Dates Page -->
+    <section class="py-16 bg-repores-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-4 text-repores-purple">TOUR DATES</h2>
+            <p class="text-center mb-12 text-lg">Catch us live across Australia and beyond!</p>
+
+            <!-- Bandsintown Integration -->
+            <div class="bg-repores-white rounded-lg p-6 mb-12">
+                <script charset="utf-8" src="https://widgetv3.bandsintown.com/main.min.js"></script>
+                <a class="bit-widget-initializer"
+                    data-artist-name="id_15563423"
+                    data-events-to-display=""
+                    data-background-color="rgba(250,250,250,1)"
+                    data-separator-color="rgba(17,17,17,0.49)"
+                    data-text-color="rgba(17,17,17,1)"
+                    data-font="Trebuchet MS"
+                    data-auto-style="true"
+                    data-button-label-capitalization="uppercase"
+                    data-header-capitalization="uppercase"
+                    data-location-capitalization="uppercase"
+                    data-venue-capitalization="uppercase"
+                    data-display-local-dates="true"
+                    data-local-dates-position="tab"
+                    data-display-past-dates="true"
+                    data-display-details="false"
+                    data-display-lineup="false"
+                    data-display-start-time="false"
+                    data-social-share-icon="true"
+                    data-display-limit="all"
+                    data-date-format="MMM. D, YYYY"
+                    data-date-orientation="vertical"
+                    data-date-border-color="rgba(17,17,17,1)"
+                    data-date-border-width="1px"
+                    data-date-capitalization="capitalize"
+                    data-date-border-radius="10px"
+                    data-event-ticket-cta-size="medium"
+                    data-event-custom-ticket-text=""
+                    data-event-ticket-text="TICKETS"
+                    data-event-ticket-icon="false"
+                    data-event-ticket-cta-text-color="rgba(250,250,250,1)"
+                    data-event-ticket-cta-bg-color="rgba(104,14,210,1)"
+                    data-event-ticket-cta-border-color="rgba(74,74,74,1)"
+                    data-event-ticket-cta-border-width="0px"
+                    data-event-ticket-cta-border-radius="2px"
+                    data-sold-out-button-text-color="rgba(104,14,210,1)"
+                    data-sold-out-button-background-color="rgba(74,74,74,1)"
+                    data-sold-out-button-border-color="rgba(74,74,74,1)"
+                    data-sold-out-button-clickable="true"
+                    data-event-rsvp-position="left"
+                    data-event-rsvp-cta-size="medium"
+                    data-event-rsvp-only-show-icon="false"
+                    data-event-rsvp-text="RSVP"
+                    data-event-rsvp-icon="false"
+                    data-event-rsvp-cta-text-color="rgba(250,250,250,1)"
+                    data-event-rsvp-cta-bg-color="rgba(235,29,76,1)"
+                    data-event-rsvp-cta-border-color="rgba(74,74,74,1)"
+                    data-event-rsvp-cta-border-width="0px"
+                    data-event-rsvp-cta-border-radius="2px"
+                    data-follow-section-position="bottom"
+                    data-follow-section-alignment="center"
+                    data-follow-section-header-text="Get notified about new shows"
+                    data-follow-section-cta-size="medium"
+                    data-follow-section-cta-text="FOLLOW"
+                    data-follow-section-cta-icon="true"
+                    data-follow-section-cta-text-color="rgba(250,250,250,1)"
+                    data-follow-section-cta-bg-color="rgba(235,29,76,1)"
+                    data-follow-section-cta-border-color="rgba(74,74,74,1)"
+                    data-follow-section-cta-border-width="0px"
+                    data-follow-section-cta-border-radius="2px"
+                    data-play-my-city-position="hidden"
+                    data-play-my-city-alignment="center"
+                    data-play-my-city-header-text="Don’t see a show near you?"
+                    data-play-my-city-cta-size="medium"
+                    data-play-my-city-cta-text="REQUEST A SHOW"
+                    data-play-my-city-cta-icon="false"
+                    data-play-my-city-cta-text-color="rgba(255,255,255,1)"
+                    data-play-my-city-cta-bg-color="rgba(74,74,74,1)"
+                    data-play-my-city-cta-border-color="rgba(74,74,74,1)"
+                    data-play-my-city-cta-border-width="0px"
+                    data-play-my-city-cta-border-radius="2px"
+                    data-language="en"
+                    data-layout-breakpoint="900"
+                    data-app-id="2dbac437fc35c671a40d15c573f707e2"
+                    data-affil-code=""
+                    data-bit-logo-position="hidden"
+                    data-bit-logo-color="rgba(17,17,17,1)"
+                ></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="py-16 bg-repores-black text-repores-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-8 text-repores-red">GET IN TOUCH</h2>
+            <div class="max-w-2xl mx-auto">
+                <form class="space-y-6" onsubmit="handleContactForm(event)">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-bold mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full px-4 py-2 rounded bg-repores-white text-repores-black border-2 border-repores-purple focus:border-repores-red focus:outline-none transition-colors duration-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-4 py-2 rounded bg-repores-white text-repores-black border-2 border-repores-purple focus:border-repores-red focus:outline-none transition-colors duration-300">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-bold mb-2">Message</label>
+                        <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 rounded bg-repores-white text-repores-black border-2 border-repores-purple focus:border-repores-red focus:outline-none transition-colors duration-300"></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-repores-red text-repores-white py-3 rounded-full font-bold text-lg hover:bg-opacity-90 transition-colors duration-300 transform hover:scale-105">SEND MESSAGE</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-r from-repores-purple to-repores-red">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8 text-repores-white">JOIN THE RHAD PACK!</h2>
+            <div class="max-w-4xl mx-auto">
+                <iframe src="https://bandsintown.com/artist/15563423/email_signup_form?headerTextColor=rgba(17,17,17,1)&backgroundColor=rgba(250,250,250,1)&ctaBackgroundColor=rgba(104,14,210,1)&title=JOIN THE RHAD PACK&headerTextStyle=normal&headerText=Sign Up for the Mailing List&font=Trebuchet MS&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=0px&ctaBorderColor=rgba(0,180,179,1)&ctaFontColor=rgba(255,255,255,1)&alignment=center&emailInputField=show&ctaLabel=Sign-Up&layout=wide&locale=en" width="100%" height="220px" title="newsletter-widget"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-repores-black text-repores-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <h3 class="text-xl font-bold text-repores-red">THE REPORES</h3>
+                    <p class="text-sm opacity-80">Melbourne, Australia</p>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-xl">
+                        <i class="fab fa-spotify"></i>
+                    </a>
+                    <a href="#" class="text-repores-white hover:text-repores-purple transition-colors duration-300 text-xl">
+                        <i class="fab fa-apple"></i>
+                    </a>
+                    <a href="#" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-xl">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="#" class="text-repores-white hover:text-repores-purple transition-colors duration-300 text-xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2024 The Repores. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        function handleContactForm(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+            alert('Thank you for your message! We will get back to you soon.');
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>
