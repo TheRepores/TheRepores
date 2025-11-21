@@ -1,139 +1,296 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
+  <base target="_self" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>The Repores - Tour Dates</title>
+  <meta
+    name="description"
+    content="Official website of The Repores, a high-energy rock band from Melbourne, Australia. Discover tour dates and catch live shows!"
+  />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Trebuchet+MS&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
   <script>
     tailwind.config = {
       theme: {
         extend: {
           colors: {
-            'repores-red': '#eb1d4c',
-            'repores-purple': '#680ed2',
-            'repores-black': '#111111',
-            'repores-white': '#fafafa'
+            "repores-red": "#eb1d4c",
+            "repores-purple": "#680ed2",
+            "repores-black": "#111111",
+            "repores-white": "#fafafa",
           },
           fontFamily: {
-            'trebuchet': ['Trebuchet MS', 'sans-serif']
-          }
-        }
-      }
-    }
+            trebuchet: ["Trebuchet MS", "sans-serif"],
+          },
+        },
+      },
+    };
   </script>
   <style>
     body {
-      font-family: 'Trebuchet MS', sans-serif;
-    }
-    .nav-link {
-      transition: color 0.3s;
-    }
-    .nav-link:hover {
-      color: #eb1d4c; /* repores-red */
+      font-family: "Trebuchet MS", sans-serif;
     }
     .pulse-animation {
-      animation: pulse 2.5s infinite ease-in-out;
-      display: inline-block;
+      animation: pulse 2s infinite;
     }
     @keyframes pulse {
-      0%, 100% { transform: scale(1);}
-      50% { transform: scale(1.08);}
-    }
-    /* Footer icon size and hover */
-    .social-icon {
-      font-size: 1.75rem;
-      transition: color 0.3s;
-      color: #fafafa;
-    }
-    .social-icon:hover {
-      color: #680ed2; /* repores-purple */
-    }
-    /* Mailing list container wide not stacking */
-    .mailing-list-wrapper iframe {
-      width: 100% !important;
-      max-width: 800px;
-      height: 220px;
-      border-radius: 6px;
-      border: none;
-    }
-    /* Image placeholder with shadow and skew */
-    .image-placeholder {
-      background-color: #680ed2;
-      width: 100%;
-      max-width: 400px;
-      aspect-ratio: 1 / 1;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(107,0,255,0.3);
-      transform: skew(-5deg);
-      margin: 0 auto;
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
   </style>
 </head>
-<body class="bg-repores-white text-repores-black flex flex-col min-h-screen">
-
-  <!-- Header / Navigation -->
-  <header class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg">
-    <div class="container mx-auto px-6 py-4 flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-4 md:mb-0">
-        <h1 class="text-3xl font-extrabold text-repores-red pulse-animation select-none">THE REPORES</h1>
-        <p class="uppercase text-sm opacity-80 tracking-widest">Melbourne Rock Band</p>
+<body class="bg-repores-white text-repores-black font-trebuchet min-h-screen">
+  <!-- Navigation -->
+  <header
+    class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg"
+  >
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h1 class="text-2xl font-bold text-repores-red pulse-animation">
+            THE REPORES
+          </h1>
+          <p class="text-sm text-repores-white opacity-80">Melbourne Rock Band</p>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+          <a
+            href="index.html"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            >HOME</a
+          >
+          <a href="tour.html" class="text-repores-red font-bold">TOUR DATES</a>
+          <a
+            href="news.html"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            >NEWS</a
+          >
+          <a
+            href="music.html"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            >MUSIC</a
+          >
+        </div>
       </div>
-      <nav class="flex gap-6 text-lg font-semibold uppercase tracking-wide select-none">
-        <a href="index.html" class="nav-link hover:text-repores-red">HOME</a>
-        <a href="tour.html" class="nav-link text-repores-red">TOUR DATES</a>
-        <a href="news.html" class="nav-link hover:text-repores-red">NEWS</a>
-        <a href="music.html" class="nav-link hover:text-repores-red">MUSIC</a>
-        <a href="contact.html" class="nav-link hover:text-repores-red">CONTACT</a>
-      </nav>
-    </div>
+    </nav>
   </header>
 
-  <!-- Main Content -->
-  <main class="flex-grow container mx-auto px-6 py-12 max-w-6xl">
-    <h2 class="text-5xl font-bold mb-6 text-center text-repores-purple">Catch Us Live!</h2>
-    <p class="text-center text-lg mb-12 max-w-3xl mx-auto">Experience The Repores live across Australia and beyond. Don't miss the high-energy shows and raw rock power!</p>
+  <!-- Tour Dates Section -->
+  <section class="py-16 bg-repores-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-4 text-repores-purple">
+        TOUR DATES
+      </h2>
+      <p class="text-center mb-12 text-lg">
+        Catch us live across Australia and beyond!
+      </p>
 
-    <section aria-label="Tour Dates Widget" class="mb-16 shadow-xl rounded-lg overflow-hidden bg-repores-white border border-repores-purple">
-      <!-- Latest Bandsintown Widget (as of 2025) -->
-      <iframe
-        src="https://bandsintown.com/artist/15563423?came_from=267&font=Trebuchet%20MS&header_text_color=%23111111&background_color=%23fafafa&date_color=%23680ed2&text_color=%23111111"
-        width="100%"
-        height="650"
-        loading="lazy"
-        style="border:none;"
-        title="The Repores Tour Dates">
-      </iframe>
-    </section>
-
-    <!-- Image placeholder: replace with your own -->
-    <aside aria-label="Band photo placeholder" class="mb-16">
-      <div class="image-placeholder"></div>
-      <p class="text-center italic text-repores-purple mt-4">Your own band photo or artwork here</p>
-    </aside>
-
-  </main>
-
-  <!-- Footer with Socials and Contact Button -->
-  <footer class="bg-repores-black text-repores-white py-8 shadow-inner">
-    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-      <!-- Social icons -->
-      <div class="flex gap-6 text-center md:text-left">
-        <a href="https://www.instagram.com/the_repores/" target="_blank" aria-label="Instagram" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@therepores" target="_blank" aria-label="YouTube" class="social-icon"><i class="fab fa-youtube"></i></a>
-        <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" aria-label="Spotify" class="social-icon"><i class="fab fa-spotify"></i></a>
-        <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" aria-label="Apple Music" class="social-icon"><i class="fab fa-apple"></i></a>
-        <a href="https://www.redbubble.com/people/TheRepores/shop?asc=u" target="_blank" aria-label="Redbubble" class="social-icon"><i class="fas fa-shopping-bag"></i></a>
+      <!-- Bandsintown Integration -->
+      <div class="bg-repores-white rounded-lg p-6 mb-12">
+        <script
+          charset="utf-8"
+          src="https://widgetv3.bandsintown.com/main.min.js"
+        ></script>
+        <a
+          class="bit-widget-initializer"
+          data-artist-name="id_15563423"
+          data-events-to-display=""
+          data-background-color="rgba(250,250,250,1)"
+          data-separator-color="rgba(17,17,17,0.49)"
+          data-text-color="rgba(17,17,17,1)"
+          data-font="Trebuchet MS"
+          data-auto-style="true"
+          data-button-label-capitalization="uppercase"
+          data-header-capitalization="uppercase"
+          data-location-capitalization="uppercase"
+          data-venue-capitalization="uppercase"
+          data-display-local-dates="true"
+          data-local-dates-position="tab"
+          data-display-past-dates="true"
+          data-display-details="false"
+          data-display-lineup="false"
+          data-display-start-time="false"
+          data-social-share-icon="true"
+          data-display-limit="all"
+          data-date-format="MMM. D, YYYY"
+          data-date-orientation="vertical"
+          data-date-border-color="rgba(17,17,17,1)"
+          data-date-border-width="1px"
+          data-date-capitalization="capitalize"
+          data-date-border-radius="10px"
+          data-event-ticket-cta-size="medium"
+          data-event-custom-ticket-text=""
+          data-event-ticket-text="TICKETS"
+          data-event-ticket-icon="false"
+          data-event-ticket-cta-text-color="rgba(250,250,250,1)"
+          data-event-ticket-cta-bg-color="rgba(104,14,210,1)"
+          data-event-ticket-cta-border-color="rgba(74,74,74,1)"
+          data-event-ticket-cta-border-width="0px"
+          data-event-ticket-cta-border-radius="2px"
+          data-sold-out-button-text-color="rgba(104,14,210,1)"
+          data-sold-out-button-background-color="rgba(74,74,74,1)"
+          data-sold-out-button-border-color="rgba(74,74,74,1)"
+          data-sold-out-button-clickable="true"
+          data-event-rsvp-position="left"
+          data-event-rsvp-cta-size="medium"
+          data-event-rsvp-only-show-icon="false"
+          data-event-rsvp-text="RSVP"
+          data-event-rsvp-icon="false"
+          data-event-rsvp-cta-text-color="rgba(250,250,250,1)"
+          data-event-rsvp-cta-bg-color="rgba(235,29,76,1)"
+          data-event-rsvp-cta-border-color="rgba(74,74,74,1)"
+          data-event-rsvp-cta-border-width="0px"
+          data-event-rsvp-cta-border-radius="2px"
+          data-follow-section-position="bottom"
+          data-follow-section-alignment="center"
+          data-follow-section-header-text="Get notified about new shows"
+          data-follow-section-cta-size="medium"
+          data-follow-section-cta-text="FOLLOW"
+          data-follow-section-cta-icon="true"
+          data-follow-section-cta-text-color="rgba(250,250,250,1)"
+          data-follow-section-cta-bg-color="rgba(235,29,76,1)"
+          data-follow-section-cta-border-color="rgba(74,74,74,1)"
+          data-follow-section-cta-border-width="0px"
+          data-follow-section-cta-border-radius="2px"
+          data-play-my-city-position="hidden"
+          data-play-my-city-alignment="center"
+          data-play-my-city-header-text="Don’t see a show near you?"
+          data-play-my-city-cta-size="medium"
+          data-play-my-city-cta-text="REQUEST A SHOW"
+          data-play-my-city-cta-icon="false"
+          data-play-my-city-cta-text-color="rgba(255,255,255,1)"
+          data-play-my-city-cta-bg-color="rgba(74,74,74,1)"
+          data-play-my-city-cta-border-color="rgba(74,74,74,1)"
+          data-play-my-city-cta-border-width="0px"
+          data-play-my-city-cta-border-radius="2px"
+          data-language="en"
+          data-layout-breakpoint="900"
+          data-app-id="2dbac437fc35c671a40d15c573f707e2"
+          data-affil-code=""
+          data-bit-logo-position="hidden"
+          data-bit-logo-color="rgba(17,17,17,1)"
+        ></a>
       </div>
-      <!-- Contact us button -->
-      <a href="contact.html" class="bg-repores-red hover:bg-red-600 text-white font-bold rounded-full px-6 py-3 uppercase tracking-wide select-none shadow-lg transition">CONTACT US</a>
     </div>
-    <p class="text-center opacity-60 mt-6 text-sm">&copy; 2025 The Repores | Melbourne, Australia</p>
+  </section>
+
+  <!-- Join The Rhad Pack Section -->
+  <section class="py-16 bg-repores-red">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8 text-repores-white">JOIN THE RHAD PACK!</h2>
+      <div class="max-w-4xl mx-auto">
+        <iframe
+          src="https://bandsintown.com/artist/15563423/email_signup_form?headerTextColor=rgba(17,17,17,1)&backgroundColor=rgba(250,250,250,1)&ctaBackgroundColor=rgba(104,14,210,1)&title=JOIN THE RHAD PACK&headerTextStyle=normal&headerText=Sign Up for Our Mailing List&font=Helvetica&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=0px&ctaBorderColor=rgba(0,180,179,1)&ctaFontColor=rgba(255,255,255,1)&alignment=center&emailInputField=show&ctaLabel=Sign-Up&layout=wide&locale=en"
+          width="100%"
+          height="220px"
+          title="newsletter-widget"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Us Button -->
+  <div class="bg-repores-black py-8 text-center">
+    <a
+      href="contact.html"
+      class="inline-flex items-center gap-3 bg-repores-purple text-repores-white px-6 py-3 rounded-full font-bold text-lg hover:bg-opacity-90 transition-colors duration-300"
+      >CONTACT US
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M14 5l7 7m0 0l-7 7m7-7H3"
+        />
+      </svg>
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-repores-black text-repores-white py-8">
+    <div class="container mx-auto px-4">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center mb-6"
+      >
+        <div>
+          <h3 class="text-xl font-bold text-repores-red">THE REPORES</h3>
+          <p class="text-sm opacity-80">Melbourne, Australia</p>
+        </div>
+        <div class="flex gap-6">
+          <a
+            href="https://www.instagram.com/the_repores/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/@therepores"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+            aria-label="YouTube"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+            aria-label="Spotify"
+            ><i class="fab fa-spotify"></i
+          ></a>
+          <a
+            href="https://music.apple.com/gb/artist/the-repores/1693825915"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+            aria-label="Apple Music"
+            ><i class="fab fa-apple"></i
+          ></a>
+          <a
+            href="https://www.redbubble.com/people/TheRepores/shop?asc=u"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+            aria-label="Redbubble"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 24 24"
+              class="w-6 h-6"
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10a9.91 9.91 0 007.07-2.93c.4-.4.4-1.05 0-1.45a1.02 1.02 0 00-1.44-.07A8 8 0 0112 20a8 8 0 010-16zm3.64 11.13c.79 0 1.33.5 1.34 1.35.01.64-.41 1.13-1.03 1.28l-2.73.8a2.15 2.15 0 01-2.2-.66 2.51 2.51 0 01-.54-1.7c.01-1.11.9-2.01 2.15-2.01a2.09 2.09 0 011.86 1.14 2.04 2.04 0 011.13.2zm-6.97-2.7c.13.23.3.44.52.61a1.64 1.64 0 001.3.37 1.29 1.29 0 00.7-.58 2.52 2.52 0 00.28-1.22c0-.57-.31-1.13-.9-1.41-.69-.35-1.68-.33-2.04.59-.2.56.18 1.37.4 1.64zM17 15.54c-.36-.11-.7-.28-1-.51a1.94 1.94 0 01-1.34-1.15 3.53 3.53 0 01-.21-1.52 2.67 2.67 0 01.21-.74 1.68 1.68 0 01.61-.74c.4-.3 1.02-.5 1.39-.28.46.26.67 1.3.92 2.17a10.15 10.15 0 01-1.57 2.8z"
+              />
+            </svg></a
+          >
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 text-center">
+        <p>&copy; 2025 The Repores. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- FontAwesome Icons -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
