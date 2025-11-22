@@ -25,21 +25,46 @@
 </script>
 </head>
 <body class="bg-repores-white text-repores-black min-h-screen flex flex-col">
-<!-- Navbar -->
-<header class="bg-repores-black sticky top-0 z-50 shadow-lg">
-  <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-    <div>
-      <h1 class="text-2xl font-bold text-repores-red">THE REPORES</h1>
-    </div>
-    <nav class="flex gap-4 font-bold">
-      <a href="index.html" class="text-repores-white hover:text-repores-red">HOME</a>
-      <a href="tour.html" class="text-repores-white hover:text-repores-red">TOUR DATES</a>
-      <a href="news.html" class="text-repores-white hover:text-repores-red">NEWS</a>
-      <a href="music.html" class="text-repores-white hover:text-repores-red">MUSIC</a>
-      <a href="contact.html" class="text-repores-red">CONTACT</a>
+  <!-- Navigation -->
+  <header
+    class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg"
+  >
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <img src="LOGO.png" alt="The Repores Logo" class="h-12 pulse-animation" />
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+          <a
+            href="index.html"
+            class="text-repores-red font-bold"
+            aria-current="page"
+            >HOME</a
+          >
+          <a
+            href="tour.html"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            >TOUR</a
+          >
+          <a
+            href="news.html"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            >NEWS</a
+          >
+          <a
+            href="music.html"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            >MUSIC</a
+          >
+          <a
+            href="https://www.redbubble.com/people/TheRepores/shop?asc=u"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            >STORE</a
+          >
+        </div>
+      </div>
     </nav>
-  </div>
-</header>
+  </header>
 
 <!-- Contact Form -->
 <section class="py-16 px-4 bg-repores-white flex-1">
