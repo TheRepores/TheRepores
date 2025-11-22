@@ -4,26 +4,49 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>The Repores - Music</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link hhref="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap"
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap"
     rel="stylesheet"
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          'repores-red': '#eb1d4c',
-          'repores-purple': '#680ed2',
-          'repores-black': '#111',
-          'repores-white': '#fafafa'
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "repores-red": "#eb1d4c",
+            "repores-purple": "#680ed2",
+            "repores-black": "#111111",
+            "repores-white": "#fafafa",
+          },
+          fontFamily: {
+            trebuchet: ["Trebuchet MS", "sans-serif"],
+          },
         },
-        fontFamily: {
-          'trebuchet: ["Trebuchet MS", "sans-serif"]
-        }
+      },
+    };
+  </script>
+  <style>
+    body {
+      font-family: "Trebuchet MS", sans-serif;
+    }
+    .pulse-animation {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
       }
     }
-  }
-</script>
+  </style>
 </head>
 <body class="bg-repores-white text-repores-black min-h-screen flex flex-col">
   <!-- Navigation -->
