@@ -9,11 +9,13 @@
     name="description"
     content="Official website of The Repores, from Melbourne, Australia. Discover our music, tour dates, news, store, and join the Rhad Pack!"
   />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap"
     rel="stylesheet"
   />
+
   <script>
     tailwind.config = {
       theme: {
@@ -223,27 +225,56 @@
     </div>
   </section>
 
-  <!-- Contact Us Button -->
-  <div class="bg-repores-black py-8 text-center">
-    <a
-      href="contact.html"
-      class="inline-flex items-center gap-3 bg-repores-purple text-repores-white px-6 py-3 rounded-full font-bold text-lg hover:bg-opacity-90 transition-colors duration-300"
-      >CONTACT US
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M14 5l7 7m0 0l-7 7m7-7H3"
-        />
-      </svg>
+  <!-- Contact Us Text Bar -->
+  <div class="bg-repores-black py-8 text-white flex items-center justify-between px-4">
+    <div>
+      <h3 class="text-xl font-bold text-repores-red">THE REPORES</h3>
+      <p class="text-sm opacity-80">Melbourne, Australia</p>
+    </div>
+    <a href="contact.html" class="text-repores-white font-bold hover:text-repores-red transition-colors duration-300 text-center w-full md:w-auto">
+      contact us
     </a>
+    <div class="flex gap-6">
+      <a
+        href="https://www.instagram.com/the_repores/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+        aria-label="Instagram"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a
+        href="https://www.youtube.com/@therepores"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+        aria-label="YouTube"
+        ><i class="fab fa-youtube"></i
+      ></a>
+      <a
+        href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+        aria-label="Spotify"
+        ><i class="fab fa-spotify"></i
+      ></a>
+      <a
+        href="https://music.apple.com/gb/artist/the-repores/1693825915"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+        aria-label="Apple Music"
+        ><i class="fab fa-apple"></i
+        >
+
+          <path
+            d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10a9.91 9.91 0 007.07-2.93c.4-.4.4-1.05 0-1.45a1.02 1.02 0 00-1.44-.07A8 8 0 0112 20a8 8 0 010-16zm3.64 11.13c.79 0 1.33.5 1.34 1.35.01.64-.41 1.13-1.03 1.28l-2.73.8a2.15 2.15 0 01-2.2-.66 2.51 2.51 0 01-.54-1.7c.01-1.11.9-2.01 2.15-2.01a2.09 2.09 0 011.86 1.14 2.04 2.04 0 011.13.2zm-6.97-2.7c.13.23.3.44.52.61a1.64 1.64 0 001.3.37 1.29 1.29 0 00.7-.58 2.52 2.52 0 00.28-1.22c0-.57-.31-1.13-.9-1.41-.69-.35-1.68-.33-2.04.59-.2.56.18 1.37.4 1.64zM17 15.54c-.36-.11-.7-.28-1-.51a1.94 1.94 0 01-1.34-1.15 3.53 3.53 0 01-.21-1.52 2.67 2.67 0 01.21-.74 1.68 1.68 0 01.61-.74c.4-.3 1.02-.5 1.39-.28.46.26.67 1.3.92 2.17a10.15 10.15 0 01-1.57 2.8z"
+          />
+        </svg></a
+      >
+
+    </div>
   </div>
 
   <!-- Footer -->
@@ -289,6 +320,7 @@
             aria-label="Apple Music"
             ><i class="fab fa-apple"></i
             >
+
               <path
                 d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10a9.91 9.91 0 007.07-2.93c.4-.4.4-1.05 0-1.45a1.02 1.02 0 00-1.44-.07A8 8 0 0112 20a8 8 0 010-16zm3.64 11.13c.79 0 1.33.5 1.34 1.35.01.64-.41 1.13-1.03 1.28l-2.73.8a2.15 2.15 0 01-2.2-.66 2.51 2.51 0 01-.54-1.7c.01-1.11.9-2.01 2.15-2.01a2.09 2.09 0 011.86 1.14 2.04 2.04 0 011.13.2zm-6.97-2.7c.13.23.3.44.52.61a1.64 1.64 0 001.3.37 1.29 1.29 0 00.7-.58 2.52 2.52 0 00.28-1.22c0-.57-.31-1.13-.9-1.41-.69-.35-1.68-.33-2.04.59-.2.56.18 1.37.4 1.64zM17 15.54c-.36-.11-.7-.28-1-.51a1.94 1.94 0 01-1.34-1.15 3.53 3.53 0 01-.21-1.52 2.67 2.67 0 01.21-.74 1.68 1.68 0 01.61-.74c.4-.3 1.02-.5 1.39-.28.46.26.67 1.3.92 2.17a10.15 10.15 0 01-1.57 2.8z"
               />
