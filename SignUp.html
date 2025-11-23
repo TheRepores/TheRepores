@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>The Repores - News</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "repores-red": "#eb1d4c",
+            "repores-purple": "#680ed2",
+            "repores-black": "#111111",
+            "repores-white": "#fafafa",
+          },
+          fontFamily: {
+            trebuchet: ["Trebuchet MS", "sans-serif"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body {
+      font-family: "Trebuchet MS", sans-serif;
+    }
+    .pulse-animation {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+<body class="bg-repores-white text-repores-black min-h-screen flex flex-col">
+  <!-- Navigation -->
+  <header
+    class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg"
+  >
+    <nav class="container mx-auto px-4 py-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <img src="LOGO.png" alt="The Repores Logo" class="h-12 pulse-animation" />
+        </div>
+        <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+          <a
+            href="index.html"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            aria-current="page"
+            >HOME</a
+          >
+          <a
+            href="tour.html"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            >TOUR</a
+          >
+          <a
+            href="news.html"
+            class="text-repores-purple hover:text-repores-red transition-colors duration-300 font-bold"
+            >NEWS</a
+          >
+          <a
+            href="music.html"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            >MUSIC</a
+          >
+          <a
+            href="https://www.redbubble.com/people/TheRepores/shop?asc=u"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
+            >STORE</a
+          >
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Join The Rhad Pack Section -->
+  <section class="py-16 bg-repores-red">
+      <div class="max-w-4xl mx-auto">
+        <iframe
+          src="https://bandsintown.com/artist/15563423/email_signup_form?headerTextColor=rgba(250,250,250,1)&backgroundColor=rgba(235,29,76,1)&ctaBackgroundColor=rgba(104,14,210,1)&title=JOIN THE RHAD PACK!&headerTextStyle=normal&headerText=Sign Up for Our Mailing List&font=Helvetica&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=0px&ctaBorderColor=rgba(0,180,179,1)&ctaFontColor=rgba(255,255,255,1)&alignment=center&emailInputField=show&ctaLabel=Sign-Up&layout=wide&locale=en"
+          width="100%"
+          height="300px"
+          title="newsletter-widget"
+        ></iframe>
+    
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-repores-black text-repores-white py-8">
+    <div class="container mx-auto px-4">
+      <div
+        class="flex flex-col md:flex-row justify-between items-center mb-6"
+      >
+        <div>
+          <h3 class="text-xl font-bold text-repores-red">THE REPORES</h3>
+          <p class="text-sm opacity-80">Melbourne, Australia</p>
+        </div>
+      <a href="contact.html" class="text-repores-white font-bold hover:text-repores-red transition-colors duration-300 text-center w-full md:w-auto">
+      Contact Us
+    </a>
+        <div class="flex gap-6">
+          <a
+            href="https://www.instagram.com/the_repores/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+            aria-label="Instagram"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a
+            href="https://www.youtube.com/@therepores"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+            aria-label="YouTube"
+            ><i class="fab fa-youtube"></i
+          ></a>
+          <a
+            href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+            aria-label="Spotify"
+            ><i class="fab fa-spotify"></i
+          ></a>
+          <a
+            href="https://music.apple.com/gb/artist/the-repores/1693825915"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
+            aria-label="Apple Music"
+            ><i class="fab fa-apple"></i
+            >
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10a9.91 9.91 0 007.07-2.93c.4-.4.4-1.05 0-1.45a1.02 1.02 0 00-1.44-.07A8 8 0 0112 20a8 8 0 010-16zm3.64 11.13c.79 0 1.33.5 1.34 1.35.01.64-.41 1.13-1.03 1.28l-2.73.8a2.15 2.15 0 01-2.2-.66 2.51 2.51 0 01-.54-1.7c.01-1.11.9-2.01 2.15-2.01a2.09 2.09 0 011.86 1.14 2.04 2.04 0 011.13.2zm-6.97-2.7c.13.23.3.44.52.61a1.64 1.64 0 001.3.37 1.29 1.29 0 00.7-.58 2.52 2.52 0 00.28-1.22c0-.57-.31-1.13-.9-1.41-.69-.35-1.68-.33-2.04.59-.2.56.18 1.37.4 1.64zM17 15.54c-.36-.11-.7-.28-1-.51a1.94 1.94 0 01-1.34-1.15 3.53 3.53 0 01-.21-1.52 2.67 2.67 0 01.21-.74 1.68 1.68 0 01.61-.74c.4-.3 1.02-.5 1.39-.28.46.26.67 1.3.92 2.17a10.15 10.15 0 01-1.57 2.8z"
+              />
+            </svg></a
+          >
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 text-center">
+        <p>&copy; 2025 The Repores. All rights reserved. Website by Cal Lawrence</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+</html>
