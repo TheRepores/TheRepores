@@ -99,29 +99,39 @@
 
 <!-- Rock The Night Section -->
 <section 
-  class="relative text-repores-white py-90 bg-cover bg-center bg-no-repeat min-h-[80vh]"
-  style="background-image: url('BANDPHOTO1.jpg');"
+  class="relative text-repores-white bg-no-repeat bg-top"
+  style="
+    background-image: url('BANDPHOTO1.jpg');
+    background-size: contain;
+    height: calc(100vw * (2936 / 5184)); /* adjust 5184 to your image width in px */
+    max-height: 100vh;
+  "
 >
+  <!-- 20% overlay -->
   <div class="absolute inset-0 bg-black bg-opacity-20"></div>
-  
-  <div class="relative container mx-auto px-4 text-center z-10 pt-15 pb-4">
-    <h2 class="text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-      WHO'S HERE TO DANCE?
-    </h2>
-    <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto drop-shadow-lg">
-      The Repores are serving up some of the freshest alternative rock and danceable bops in the Melbourne/Naarm scene. At their shows, people don’t roll until after the floor starts rocking.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-      <a
-        href="music"
-        class="border-2 border-repores-white text-repores-white px-8 py-3 rounded-full font-bold text-lg hover:bg-repores-white hover:text-repores-red transition-all duration-300"
-      >LISTEN NOW</a>
-      <a
-        href="tour"
-        class="border-2 border-repores-white text-repores-white px-8 py-3 rounded-full font-bold text-lg hover:bg-repores-white hover:text-repores-red transition-all duration-300"
-      >TOUR DATES</a>
+
+  <!-- Top text block only in upper band -->
+  <div class="relative z-10 w-full">
+    <div class="container mx-auto px-4 pt-12 pb-6 text-center">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 drop-shadow-lg">
+        WHO'S HERE TO DANCE?
+      </h2>
+      <p class="text-lg md:text-2xl mb-6 max-w-2xl mx-auto drop-shadow-lg">
+        The Repores are serving up some of the freshest alternative rock and danceable bops in the Melbourne/Naarm scene. At their shows, people don’t roll until after the floor starts rocking.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-6">
+        <a
+          href="music"
+          class="border-2 border-repores-white text-repores-white px-8 py-3 rounded-full font-bold text-lg hover:bg-repores-white hover:text-repores-red transition-all duration-300"
+        >LISTEN NOW</a>
+        <a
+          href="tour"
+          class="border-2 border-repores-white text-repores-white px-8 py-3 rounded-full font-bold text-lg hover:bg-repores-white hover:text-repores-red transition-all duration-300"
+        >TOUR DATES</a>
+      </div>
   </div>
 </section>
+
  
   <!-- Latest Release Section -->
   <section class="py-16 bg-repores-white">
