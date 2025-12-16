@@ -30,6 +30,14 @@
     50% { transform: scale(1.05); }
     100% { transform: scale(1); }
   }
+
+  /* Keep carousel fixed height but scale image */
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Prevent cropping */
+    background: #f4f4f4; /* Fills space when ratio doesn't match */
+  }
 </style>
 </head>
 
@@ -68,17 +76,17 @@
         <div class="carousel-track flex transition-transform duration-700 ease-in-out">
           <div class="carousel-slide w-full h-full flex-shrink-0">
             <a href="https://www.redbubble.com/i/t-shirt/The-Repores-Logo-w-Outline-by-TheRepores/175429711.74GE1" target="_blank">
-              <img src="LOOTB.webp" alt="T-Shirt 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
+              <img src="LOOTB.webp" alt="T-Shirt 1" class="cursor-pointer hover:scale-105 transition-transform duration-300">
             </a>
           </div>
           <div class="carousel-slide w-full h-full flex-shrink-0">
             <a href="https://www.examplelink.com" target="_blank">
-              <img src="PBC.jpg" alt="Hoodie 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
+              <img src="PBC.jpg" alt="Hoodie 1" class="cursor-pointer hover:scale-105 transition-transform duration-300">
             </a>
           </div>
           <div class="carousel-slide w-full h-full flex-shrink-0">
             <a href="https://www.examplelink.com" target="_blank">
-              <img src="cap1.jpg" alt="Cap 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
+              <img src="cap1.jpg" alt="Cap 1" class="cursor-pointer hover:scale-105 transition-transform duration-300">
             </a>
           </div>
         </div>
@@ -106,17 +114,17 @@
         <div class="carousel-track flex transition-transform duration-700 ease-in-out">
           <div class="carousel-slide w-full h-full flex-shrink-0">
             <a href="https://www.examplelink.com" target="_blank">
-              <img src="sticker1.jpg" alt="Sticker 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
+              <img src="sticker1.jpg" alt="Sticker 1" class="cursor-pointer hover:scale-105 transition-transform duration-300">
             </a>
           </div>
           <div class="carousel-slide w-full h-full flex-shrink-0">
             <a href="https://www.examplelink.com" target="_blank">
-              <img src="poster1.jpg" alt="Poster 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
+              <img src="poster1.jpg" alt="Poster 1" class="cursor-pointer hover:scale-105 transition-transform duration-300">
             </a>
           </div>
           <div class="carousel-slide w-full h-full flex-shrink-0">
             <a href="https://www.examplelink.com" target="_blank">
-              <img src="cd1.jpg" alt="CD 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
+              <img src="cd1.jpg" alt="CD 1" class="cursor-pointer hover:scale-105 transition-transform duration-300">
             </a>
           </div>
         </div>
@@ -144,12 +152,12 @@
         <div class="carousel-track flex transition-transform duration-700 ease-in-out">
           <div class="carousel-slide w-full h-full flex-shrink-0">
             <a href="https://elasticstage.com/therepores/releases/house-pets-and-empty-threats-singleep" target="_blank">
-              <img src="EPCD.jpg" alt="EP CD" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
+              <img src="EPCD.jpg" alt="EP CD" class="cursor-pointer hover:scale-105 transition-transform duration-300">
             </a>
           </div>
           <div class="carousel-slide w-full h-full flex-shrink-0">
             <a href="https://elasticstage.com/therepores/releases/house-pets-and-empty-threats-singleep" target="_blank">
-              <img src="EPV.jpg" alt="EP Vinyl" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
+              <img src="EPV.jpg" alt="EP Vinyl" class="cursor-pointer hover:scale-105 transition-transform duration-300">
             </a>
           </div>
         </div>
@@ -188,10 +196,10 @@
       </div>
       <a href="contact" class="text-repores-white font-bold hover:text-repores-red transition-colors duration-300 text-center w-full md:w-auto">Contact Us</a>
       <div class="flex gap-6">
-        <a href="https://www.instagram.com/the_repores/" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@therepores" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-        <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-        <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+        <a href="https://www.instagram.com/the_repores/" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@therepores" target="_blank" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"><i class="fab fa-youtube"></i></a>
+        <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"><i class="fab fa-spotify"></i></a>
+        <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"><i class="fab fa-apple"></i></a>
       </div>
     </div>
     <div class="border-t border-gray-700 pt-8 text-center">
@@ -202,7 +210,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
-<!-- 🌀 Full Carousel Functionality -->
+<!-- Carousel functionality (auto + swipe + pause on hover) -->
 <script>
   function initCarousel(carouselId) {
     const carousel = document.getElementById(carouselId);
@@ -241,15 +249,13 @@
       startAutoSlide();
     }
 
-    // Swipe gestures for mobile
-    carousel.addEventListener('touchstart', e => (startX = e.touches[0].clientX));
-    carousel.addEventListener('touchmove', e => (endX = e.touches[0].clientX));
+    carousel.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    carousel.addEventListener('touchmove', e => endX = e.touches[0].clientX);
     carousel.addEventListener('touchend', () => {
       if (startX - endX > 50) { goToSlide(currentSlide + 1); resetAutoSlide(); }
       else if (endX - startX > 50) { goToSlide(currentSlide - 1); resetAutoSlide(); }
     });
 
-    // Hover pause (desktop)
     carousel.addEventListener('mouseenter', () => clearInterval(autoSlide));
     carousel.addEventListener('mouseleave', startAutoSlide);
 
