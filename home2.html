@@ -207,7 +207,7 @@
 <section class="py-16 bg-repores-black text-repores-white" id="the-band">
   <div class="container mx-auto px-4 text-center mb-12">
     <h3 class="text-3xl font-bold mb-8">THE BAND</h3>
-    
+
     <div id="band-grid" class="grid grid-cols-2 sm:grid-cols-5 gap-8 max-w-5xl mx-auto justify-center relative">
       <div>
         <img src="XL.png" alt="Xavier Lane - Lead Vocals & Guitar" class="rounded-lg shadow-lg mx-auto" />
@@ -221,10 +221,16 @@
         <p class="text-sm opacity-80">Lead Guitar & Vocals</p>
       </div>
 
-      <!-- Cal Lawrence with Rhad peek animation -->
-      <div class="relative group cursor-pointer" id="cal-container">
-        <img src="CL.png" alt="Cal Lawrence - Drums" class="rounded-lg shadow-lg mx-auto relative z-10 transition-transform duration-300 group-hover:scale-105" id="cal-image" />
-        <img src="Favicon.png" alt="Rhad the Dog" class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full opacity-0 group-hover:opacity-100 group-hover:-translate-y-1/3 transition-all duration-500 ease-out w-16 h-16" id="rhad-peek" />
+      <!-- Cal Lawrence with Rhad interaction -->
+      <div class="relative" id="cal-container">
+        <img src="CL.png" alt="Cal Lawrence - Drums" id="cal-image" class="rounded-lg shadow-lg mx-auto z-10 relative" />
+        
+        <!-- Rhad, hidden behind Cal initially -->
+        <img src="RHAD.png" 
+             alt="Rhad the Dog" 
+             id="rhad-img"
+             class="absolute inset-0 mx-auto opacity-0 pointer-events-none transition-all duration-500 ease-out w-16 h-16 transform translate-y-8 z-0" />
+
         <h4 class="mt-4 font-bold text-lg">Cal Lawrence</h4>
         <p class="text-sm opacity-80">Drums & Percussion</p>
       </div>
@@ -242,39 +248,129 @@
       </div>
     </div>
 
-    <!-- Rhad jump-out area -->
-    <div id="rhad-info" class="mt-12 opacity-0 scale-0 transition-all duration-700 ease-out">
-      <img src="Favicon.png" alt="Rhad" class="mx-auto w-24 h-24 animate-bounce mb-4" />
-      <h4 class="text-2xl font-bold text-repores-purple mb-2">Meet Rhad 🐶</h4>
-      <p class="max-w-xl mx-auto text-base text-repores-white opacity-90">
-        Rhad is The Repores’ loyal mascot and spirit animal — equal parts chaos and charm. 
-        He’s been silently guarding the studio since day one, barking only when a riff truly rocks.
-      </p>
+    <!-- Hidden Rhad section that extends only when clicked -->
+    <div id="rhad-info" class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out">
+      <div id="rhad-landing" class="flex flex-col items-center">
+        <img src="RHAD.png" alt="Rhad" id="rhad-landing-img" class="w-24 h-24 mb-4 opacity-0" />
+        <h4 class="text-2xl font-bold text-repores-purple mb-2">Meet Rhad 🐶</h4>
+        <p class="max-w-xl mx-auto text-base text-repores-white opacity-90">
+          Rhad is The Repores' loyal mascot and spirit animal — equal parts chaos and charm. 
+          He's been silently guarding the studio since day one, only barking when the groove hits just right.
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
+<style>
+@keyframes rhad-leap {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-100px) translateX(20px) scale(1.1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-120px) translateX(40px) scale(1.2);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-20px) translateX(60px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) translateX(80px) scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes rhad-land {
+  0% {
+    transform: translateY(-50px) scale(0.8);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(10px) scale(1.1);
+  }
+  60% {
+    transform: translateY(-5px) scale(1);
+  }
+  80% {
+    transform: translateY(3px) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.rhad-leaping {
+  animation: rhad-leap 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
+}
+
+.rhad-landing {
+  animation: rhad-land 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
+}
+</style>
+
 <script>
   const calContainer = document.getElementById('cal-container');
+  const rhadImg = document.getElementById('rhad-img');
   const rhadInfo = document.getElementById('rhad-info');
+  const rhadLandingImg = document.getElementById('rhad-landing-img');
+  let rhadVisible = false;
+  let peekTimer = null;
 
-  calContainer.addEventListener('click', () => {
-    // Toggle Rhad's visibility
-    const visible = rhadInfo.classList.contains('opacity-100');
-    if (!visible) {
-      rhadInfo.classList.remove('opacity-0', 'scale-0');
-      rhadInfo.classList.add('opacity-100', 'scale-100');
-      window.scrollTo({
-        top: rhadInfo.offsetTop - 100,
-        behavior: 'smooth',
-      });
-    } else {
-      rhadInfo.classList.remove('opacity-100', 'scale-100');
-      rhadInfo.classList.add('opacity-0', 'scale-0');
-    }
+  // Hover triggers the peek
+  calContainer.addEventListener('mouseenter', () => {
+    if (rhadVisible || rhadInfo.classList.contains('max-h-screen')) return;
+    rhadImg.classList.remove('pointer-events-none');
+    rhadImg.style.zIndex = 20;
+    rhadImg.classList.add('opacity-100', '-translate-y-4');
+    rhadVisible = true;
+
+    // Hide Rhad again after 3 seconds if not clicked
+    peekTimer = setTimeout(() => {
+      if (rhadVisible && !rhadInfo.classList.contains('max-h-screen')) {
+        hideRhadPeek();
+      }
+    }, 3000);
+  });
+
+  // Reset timer if you re-hover before he hides
+  calContainer.addEventListener('mouseleave', () => {
+    if (!rhadVisible || rhadInfo.classList.contains('max-h-screen')) return;
+    clearTimeout(peekTimer);
+    peekTimer = setTimeout(hideRhadPeek, 1000);
+  });
+
+  function hideRhadPeek() {
+    rhadImg.classList.remove('opacity-100', '-translate-y-4');
+    rhadImg.classList.add('opacity-0', 'translate-y-8', 'pointer-events-none');
+    rhadVisible = false;
+    rhadImg.style.zIndex = 0;
+  }
+
+  // Click Rhad to trigger the leap!
+  rhadImg.addEventListener('click', () => {
+    clearTimeout(peekTimer);
+    
+    // Leap animation from Cal's position
+    rhadImg.classList.add('rhad-leaping');
+    
+    // Show the info section immediately
+    rhadInfo.classList.remove('opacity-0', 'max-h-0');
+    rhadInfo.classList.add('opacity-100', 'max-h-screen');
+    
+    // After leap completes, show landing animation
+    setTimeout(() => {
+      rhadLandingImg.classList.add('rhad-landing');
+      rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 1000);
   });
 </script>
-
 
   <!-- Join The Rhad Pack Section -->
   <section class="py-16 bg-repores-red">
