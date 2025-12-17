@@ -67,6 +67,7 @@
       transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
       pointer-events: none;
       opacity: 0;
+      will-change: transform, opacity;
     }
 
     /* Peek */
@@ -76,39 +77,44 @@
       opacity: 1;
     }
 
-    /* Jump: always visible */
+    /* Smooth jump + visible full path */
     @keyframes rhad-jump-leap {
       0% {
         transform: translateX(-50%) translateY(-120%) scale(1);
-        z-index: 40;
+        opacity: 1;
       }
-      25% {
-        transform: translateX(-50%) translateY(-190%) scale(1.4);
+      20% {
+        transform: translateX(-50%) translateY(-220%) scale(1.3);
+        opacity: 1;
       }
       50% {
-        transform: translateX(-50%) translateY(-260%) scale(1.8);
+        transform: translateX(-50%) translateY(-320%) scale(1.6);
+        opacity: 1;
       }
       75% {
-        transform: translateX(-50%) translateY(-150%) scale(1.5);
+        transform: translateX(-50%) translateY(-180%) scale(1.3);
+        opacity: 1;
       }
       100% {
-        transform: translateX(-50%) translateY(-80%) scale(1.2);
-        z-index: 50;
+        transform: translateX(-50%) translateY(-80%) scale(1.1);
+        opacity: 1;
       }
     }
 
+    /* Jump always visible and softened easing */
     #rhad-img.jump {
-      animation: rhad-jump-leap 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      animation: rhad-jump-leap 1s cubic-bezier(0.32, 0, 0.15, 1) forwards;
       z-index: 50;
+      opacity: 1;
     }
 
-    /* Landing: centered above "Meet Rhad" inside its block */
+    /* Refined landing - smoother with bounce */
     @keyframes rhad-land {
       0% {
-        transform: translateX(-50%) translateY(-60px) scale(1.2);
+        transform: translateX(-50%) translateY(-60px) scale(1.15);
       }
       40% {
-        transform: translateX(-50%) translateY(10px) scale(1.25);
+        transform: translateX(-50%) translateY(10px) scale(1.2);
       }
       70% {
         transform: translateX(-50%) translateY(-6px) scale(1.05);
@@ -123,7 +129,7 @@
       left: 50%;
       top: 0;
       transform: translateX(-50%) translateY(0);
-      animation: rhad-land 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      animation: rhad-land 0.8s cubic-bezier(0.33, 1, 0.68, 1) forwards;
       width: 96px;
       height: 96px;
       object-fit: contain;
@@ -207,7 +213,6 @@
 
   <!-- THE BAND (with Rhad) -->
   <section class="py-16 bg-repores-black text-repores-white flex flex-col justify-between">
-    <!-- Band heading + cards -->
     <div class="container mx-auto px-4 text-center">
       <h3 class="text-3xl font-bold mb-8">THE BAND</h3>
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 max-w-5xl mx-auto justify-center">
@@ -216,14 +221,12 @@
           <h4 class="mt-4 font-bold text-lg">Xavier Lane</h4>
           <p class="text-sm text-repores-white opacity-80">Lead Vocals & Guitar</p>
         </div>
-
         <div>
           <img src="AC.png" alt="Angus Cole - Lead Guitar & Vocals" class="rounded-lg shadow-lg mx-auto" />
           <h4 class="mt-4 font-bold text-lg">Angus Cole</h4>
           <p class="text-sm text-repores-white opacity-80">Lead Guitar & Vocals</p>
         </div>
 
-        <!-- Cal + Rhad -->
         <div id="cal-container">
           <div class="flex flex-col items-center">
             <div id="cal-frame" class="relative inline-block">
@@ -240,7 +243,6 @@
           <h4 class="mt-4 font-bold text-lg">Jimmy Prendergast</h4>
           <p class="text-sm text-repores-white opacity-80">Bass</p>
         </div>
-
         <div>
           <img src="AL.png" alt="Alex Lutton - Keyboards" class="rounded-lg shadow-lg mx-auto" />
           <h4 class="mt-4 font-bold text-lg">Alex Lutton</h4>
@@ -249,7 +251,7 @@
       </div>
     </div>
 
-    <!-- Rhad info lower in the same black section -->
+    <!-- Rhad info -->
     <div class="container mx-auto px-4 text-center mt-8">
       <div id="rhad-info" class="opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out relative">
         <div class="mt-12 flex flex-col items-center">
@@ -263,14 +265,13 @@
           <h4 class="mt-20 text-2xl font-bold text-repores-red mb-2">MEET RHAD</h4>
           <p class="max-w-xl mx-auto text-base text-repores-white opacity-90">
             RHADAMANTHUS is The Repores’ own hound from hell. Now a lord of Elysium, Rhad haunts the border of life and death - as judge of the damned.
- 
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Join The Rhad Pack Section -->
+  <!-- Join The Rhad Pack -->
   <section class="py-16 bg-repores-red">
     <div class="max-w-4xl mx-auto">
       <iframe
@@ -282,7 +283,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="bg-repores-black text-repores-white py-8">
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row justify-between items-center mb-6">
@@ -304,7 +304,6 @@
     </div>
   </footer>
 
-  <!-- Rhad Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const calContainer = document.getElementById('cal-container');
@@ -349,7 +348,6 @@
         rhadImg.classList.add('jump');
         rhadImg.style.pointerEvents = 'none';
 
-        // After jump finishes, show landing + text
         setTimeout(() => {
           rhadInfo.classList.remove('opacity-0', 'max-h-0');
           rhadInfo.classList.add('opacity-100');
@@ -362,7 +360,7 @@
           setTimeout(() => html.classList.remove('page-shake'), 500);
 
           rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 900); // matches rhad-jump-leap duration
+        }, 1000);
       });
     });
   </script>
