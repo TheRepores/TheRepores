@@ -59,13 +59,13 @@
 
     /* Rhad slides UP from behind (no fade, pure slide) */
     #rhad-img {
-      position: absolute !important;
+      position: absolute;
       left: 50%;
       top: 100%; /* Starts completely hidden below Cal */
       width: 80px;
       height: 80px;
       transform: translateX(-50%) translateY(0);
-      z-index: 15 !important; /* Higher than band photos */
+      z-index: 10;
       transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       pointer-events: none;
     }
@@ -75,41 +75,37 @@
       transform: translateX(-50%) translateY(-40px);
     }
 
-    /* Jump forward - VISIBLE OVER BAND, gets BIGGER, HIGH Z-INDEX */
+    /* Jump forward - visible entire time, gets BIGGER */
     @keyframes rhad-jump-forward {
       0% { 
-        position: fixed !important;
-        left: 50% !important;
-        top: 50vh !important;
-        transform: translateX(-50%) translateY(-40px) scale(1) rotate(0deg) !important; 
+        transform: translateX(-50%) translateY(-40px) scale(1) rotate(0deg); 
         opacity: 1; 
-        z-index: 1000 !important;
       }
       25% { 
-        transform: translateX(-50%) translateY(-120px) scale(1.8) rotate(-8deg) !important; 
+        transform: translateX(-50%) translateY(-80px) scale(1.6) rotate(-8deg); 
         opacity: 1; 
       }
       50% { 
-        transform: translateX(-50%) translateY(-80px) scale(2.2) rotate(3deg) !important; 
+        transform: translateX(-50%) translateY(-50px) scale(1.8) rotate(3deg); 
         opacity: 1; 
       }
       75% { 
-        transform: translateX(-50%) translateY(-20px) scale(1.6) rotate(-2deg) !important; 
+        transform: translateX(-50%) translateY(-20px) scale(1.4) rotate(-2deg); 
         opacity: 1; 
       }
       100% { 
-        transform: translateX(-50%) translateY(20px) scale(0.5) rotate(0deg) !important; 
+        transform: translateX(-50%) translateY(0px) scale(0.3) rotate(0deg); 
         opacity: 1; 
       }
     }
 
     #rhad-img.jump {
-      animation: rhad-jump-forward 1.2s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
+      animation: rhad-jump-forward 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
     }
 
     /* Landing animation */
     @keyframes rhad-land {
-      0% { transform: translateY(-60px) scale(0.5); opacity: 0; }
+      0% { transform: translateY(-60px) scale(0.3); opacity: 0; }
       30% { transform: translateY(15px) scale(1.4); opacity: 1; }
       60% { transform: translateY(-8px) scale(1.05); }
       80% { transform: translateY(5px) scale(1.02); }
@@ -194,11 +190,11 @@
     </div>
   </section>
 
-  <!-- Band Section -->
+  <!-- PERFECT Band Section -->
   <section class="py-16 bg-repores-black text-repores-white" id="the-band">
     <div class="container mx-auto px-4 text-center">
       <h3 class="text-3xl font-bold mb-8">THE BAND</h3>
-      <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 max-w-5xl mx-auto justify-center relative" style="z-index: 10;">
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 max-w-5xl mx-auto justify-center relative">
         <div>
           <img src="XL.png" alt="Xavier Lane" class="band-img rounded-lg shadow-lg mx-auto block" />
           <h4 class="mt-4 font-bold text-lg">Xavier Lane</h4>
@@ -210,10 +206,10 @@
           <p class="text-sm opacity-80">Lead Guitar & Vocals</p>
         </div>
 
-        <!-- Cal + Rhad -->
+        <!-- Cal + Rhad - SLIDES UP FROM BEHIND -->
         <div class="relative flex flex-col items-center" id="cal-container">
           <div id="rhad-frame">
-            <!-- Cal image - front layer -->
+            <!-- Cal image - front layer, ORIGINAL size -->
             <img src="CL.png" alt="Cal Lawrence" class="band-img rounded-lg shadow-lg mx-auto block relative z-20" />
             <!-- Rhad - SLIDES UP from behind bottom -->
             <img src="RHAD.png" id="rhad-img" alt="Rhad" />
@@ -272,7 +268,7 @@
     </div>
   </footer>
 
-  <!-- Rhad Script -->
+  <!-- FIXED Rhad Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const calContainer = document.getElementById('cal-container');
@@ -314,7 +310,7 @@
         isActivated = true;
         clearTimeout(hideTimeout);
         
-        // Jump animation - FULLY VISIBLE OVER EVERYTHING
+        // Jump animation - VISIBLE entire time
         rhadImg.classList.add('jump');
         rhadImg.style.pointerEvents = 'none';
         
@@ -324,7 +320,6 @@
           rhadInfo.classList.add('opacity-100');
           rhadInfo.style.maxHeight = '500px';
           
-          rhadLandingImg.style.opacity = '1';
           rhadLandingImg.classList.add('rhad-landing');
           
           // Page shake
@@ -332,7 +327,7 @@
           setTimeout(() => html.classList.remove('page-shake'), 500);
           
           rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 1200); // Match full jump duration
+        }, 1000); // Match full jump duration
       });
     });
   </script>
