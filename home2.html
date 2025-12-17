@@ -66,17 +66,17 @@
       z-index: 10;
       transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
       pointer-events: none;
-      opacity: 0; /* invisible when hidden */
+      opacity: 0;
     }
 
-    /* Peek – this was working nicely */
+    /* Peek */
     #rhad-img.peek {
       transform: translateX(-50%) translateY(-120%);
       z-index: 20;
-      opacity: 1; /* visible while peeking */
+      opacity: 1;
     }
 
-    /* Jump: no opacity changes – always visible */
+    /* Jump: always visible */
     @keyframes rhad-jump-leap {
       0% {
         transform: translateX(-50%) translateY(-120%) scale(1);
@@ -102,7 +102,7 @@
       z-index: 50;
     }
 
-    /* Landing: perfectly centered above "Meet Rhad" inside its own block */
+    /* Landing: centered above "Meet Rhad" inside its block */
     @keyframes rhad-land {
       0% {
         transform: translateX(-50%) translateY(-60px) scale(1.2);
@@ -206,8 +206,9 @@
   </section>
 
   <!-- THE BAND (with Rhad) -->
-  <section class="py-16 bg-repores-black text-repores-white">
-    <div class="container mx-auto px-4 text-center mb-12">
+  <section class="py-16 bg-repores-black text-repores-white flex flex-col justify-between">
+    <!-- Band heading + cards -->
+    <div class="container mx-auto px-4 text-center">
       <h3 class="text-3xl font-bold mb-8">THE BAND</h3>
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 max-w-5xl mx-auto justify-center">
         <div>
@@ -222,7 +223,7 @@
           <p class="text-sm text-repores-white opacity-80">Lead Guitar & Vocals</p>
         </div>
 
-        <!-- Cal + Rhad, structured like other members -->
+        <!-- Cal + Rhad -->
         <div id="cal-container">
           <div class="flex flex-col items-center">
             <div id="cal-frame" class="relative inline-block">
@@ -246,9 +247,11 @@
           <p class="text-sm text-repores-white opacity-80">Keyboards & Percussion</p>
         </div>
       </div>
+    </div>
 
-      <!-- Rhad landing section - CENTERED ABOVE TEXT -->
-      <div id="rhad-info" class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out relative">
+    <!-- Rhad info lower in the same black section -->
+    <div class="container mx-auto px-4 text-center mt-8">
+      <div id="rhad-info" class="opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out relative">
         <div class="flex flex-col items-center">
           <img
             src="RHAD.png"
