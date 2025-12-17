@@ -69,11 +69,11 @@
       opacity: 0; /* invisible when hidden */
     }
 
-    /* Peek – already good */
+    /* Peek – this was working nicely */
     #rhad-img.peek {
       transform: translateX(-50%) translateY(-120%);
       z-index: 20;
-      opacity: 1;
+      opacity: 1; /* visible while peeking */
     }
 
     /* Jump: no opacity changes – always visible */
@@ -102,7 +102,7 @@
       z-index: 50;
     }
 
-    /* Landing: perfectly centered above "Meet Rhad" */
+    /* Landing: perfectly centered above "Meet Rhad" inside its own block */
     @keyframes rhad-land {
       0% {
         transform: translateX(-50%) translateY(-60px) scale(1.2);
@@ -119,13 +119,14 @@
     }
 
     .rhad-landing {
-      animation: rhad-land 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-      width: 96px !important;  /* Slightly larger for landing */
-      height: 96px !important;
-      position: relative !important;
-      left: 50% !important;
-      transform-origin: center !important;
-
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%) translateY(0);
+      animation: rhad-land 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
     }
 
     @keyframes page-shake {
@@ -221,7 +222,7 @@
           <p class="text-sm text-repores-white opacity-80">Lead Guitar & Vocals</p>
         </div>
 
-        <!-- Cal + Rhad, aligned like others -->
+        <!-- Cal + Rhad, structured like other members -->
         <div id="cal-container">
           <div class="flex flex-col items-center">
             <div id="cal-frame" class="relative inline-block">
@@ -246,8 +247,8 @@
         </div>
       </div>
 
-      <!-- Rhad landing section - CENTERED -->
-      <div id="rhad-info" class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out">
+      <!-- Rhad landing section - CENTERED ABOVE TEXT -->
+      <div id="rhad-info" class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out relative">
         <div class="flex flex-col items-center">
           <img
             src="RHAD.png"
