@@ -53,45 +53,84 @@
         transform: scale(1);
       }
     }
+
+    /* Rhad Animations */
+    @keyframes rhad-jump-out {
+      0% {
+        transform: translate3d(-50%, 0, 0) scale(1);
+        opacity: 1;
+      }
+      40% {
+        transform: translate3d(-50%, -40px, 0) scale(1.4);
+        opacity: 1;
+      }
+      70% {
+        transform: translate3d(-50%, -10px, 0) scale(1.3);
+        opacity: 1;
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0) scale(0.2);
+        opacity: 0;
+      }
+    }
+
+    @keyframes rhad-land {
+      0% {
+        transform: translateY(-40px) scale(0.6);
+        opacity: 0;
+      }
+      30% {
+        transform: translateY(5px) scale(1.1);
+        opacity: 1;
+      }
+      60% {
+        transform: translateY(-5px) scale(1);
+      }
+      80% {
+        transform: translateY(3px) scale(1.03);
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes page-shake {
+      0%   { transform: translateX(0); }
+      20%  { transform: translateX(-5px); }
+      40%  { transform: translateX(5px); }
+      60%  { transform: translateX(-3px); }
+      80%  { transform: translateX(3px); }
+      100% { transform: translateX(0); }
+    }
+
+    .rhad-jump-out {
+      animation: rhad-jump-out 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+    }
+
+    .rhad-landing {
+      animation: rhad-land 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+    }
+
+    .page-shake {
+      animation: page-shake 0.4s ease-in-out;
+    }
   </style>
 </head>
 <body class="bg-repores-white text-repores-black font-trebuchet min-h-screen">
   <!-- Navigation -->
-  <header
-    class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg"
-  >
+  <header class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg">
     <nav class="container mx-auto px-4 py-4">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="mb-4 md:mb-0">
           <img src="LOGO.png" alt="The Repores Logo" class="h-12 pulse-animation" />
         </div>
         <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-          <a
-            href="/"
-            class="text-repores-purple hover:text-repores-red transition-colors duration-300 font-bold"
-            aria-current="page"
-            >HOME</a
-          >
-          <a
-            href="tour"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
-            >TOUR</a
-          >
-          <a
-            href="news"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
-            >NEWS</a
-          >
-          <a
-            href="music"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
-            >MUSIC</a
-          >
-          <a
-            href="store"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
-            >STORE</a
-          >
+          <a href="/" class="text-repores-purple hover:text-repores-red transition-colors duration-300 font-bold" aria-current="page">HOME</a>
+          <a href="tour" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">TOUR</a>
+          <a href="news" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">NEWS</a>
+          <a href="music" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">MUSIC</a>
+          <a href="store" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">STORE</a>
         </div>
       </div>
     </nav>
@@ -100,54 +139,31 @@
 <!-- Rock The Night Section -->
 <section class="relative bg-black text-repores-white overflow-hidden">
   <!-- Desktop image (landscape) -->
-  <img
-    src="BANDPHOTO1.jpg"
-    alt="The Repores band photo"
-    class="w-full h-auto hidden md:block"
-  />
-
+  <img src="BANDPHOTO1.jpg" alt="The Repores band photo" class="w-full h-auto hidden md:block" />
   <!-- Mobile image (portrait / more vertical) -->
-  <img
-    src="BANDPHOTOMOBILE.jpg"
-    alt="The Repores band photo mobile"
-    class="w-full h-auto block md:hidden"
-  />
+  <img src="BANDPHOTOMOBILE.jpg" alt="The Repores band photo mobile" class="w-full h-auto block md:hidden" />
 
   <!-- Desktop text overlay (comes down from top) -->
   <div class="hidden md:block absolute inset-x-0 top-0">
     <div class="container mx-auto px-4 pt-20 lg:pt-24 pb-4 text-center">
-      <h2 class="font-bold mb-3 text-4xl md:text-5xl lg:text-6xl">
-        WHO'S HERE TO DANCE?
-      </h2>
+      <h2 class="font-bold mb-3 text-4xl md:text-5xl lg:text-6xl">WHO'S HERE TO DANCE?</h2>
       <p class="mb-5 mx-auto text-base md:text-lg lg:text-2xl max-w-2xl">
-        The Repores are serving up some of the freshest alternative rock and danceable bops in the Melbourne/Naarm scene. At their shows, people don’t roll until after the floor starts rocking.
+        The Repores are serving up some of the freshest alternative rock and danceable bops in the Melbourne/Naarm scene. At their shows, people don't roll until after the floor starts rocking.
       </p>
-      <!-- Desktop buttons (under text, not at bottom) -->
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a
-          href="music"
-          class="border-2 border-repores-white text-repores-white rounded-full font-bold hover:bg-repores-white hover:text-repores-red transition-all duration-300
-                 text-base lg:text-lg px-6 py-3"
-        >LISTEN NOW</a>
-        <a
-          href="tour"
-          class="border-2 border-repores-white text-repores-white rounded-full font-bold hover:bg-repores-white hover:text-repores-red transition-all duration-300
-                 text-base lg:text-lg px-6 py-3"
-        >TOUR DATES</a>
+        <a href="music" class="border-2 border-repores-white text-repores-white rounded-full font-bold hover:bg-repores-white hover:text-repores-red transition-all duration-300 text-base lg:text-lg px-6 py-3">LISTEN NOW</a>
+        <a href="tour" class="border-2 border-repores-white text-repores-white rounded-full font-bold hover:bg-repores-white hover:text-repores-red transition-all duration-300 text-base lg:text-lg px-6 py-3">TOUR DATES</a>
       </div>
     </div>
   </div>
 
-  <!-- Mobile text overlay (unchanged, centered area) -->
+  <!-- Mobile text overlay -->
   <div class="block md:hidden absolute inset-x-0 top-0">
     <div class="container mx-auto px-4 pt-6 pb-3 text-center">
-      <h2 class="font-bold mb-2 text-3xl">
-        WHO'S HERE TO DANCE?
-      </h2>
+      <h2 class="font-bold mb-2 text-3xl">WHO'S HERE TO DANCE?</h2>
       <p class="mb-3 mx-auto text-sm max-w-xl">
-        The Repores are serving up some of the freshest alternative rock and danceable bops in the Melbourne/Naarm scene. At their shows, people don’t roll until after the floor starts rocking.
+        The Repores are serving up some of the freshest alternative rock and danceable bops in the Melbourne/Naarm scene. At their shows, people don't roll until after the floor starts rocking.
       </p>
-      <!-- Buttons will be moved to the bottom; none here -->
     </div>
   </div>
 
@@ -155,16 +171,8 @@
   <div class="block md:hidden absolute inset-x-0 bottom-4">
     <div class="container mx-auto px-4">
       <div class="flex flex-col sm:flex-row gap-2 justify-center">
-        <a
-          href="music"
-          class="border-2 border-repores-white text-repores-white rounded-full font-bold hover:bg-repores-white hover:text-repores-red transition-all duration-300
-                 text-sm px-4 py-2"
-        >LISTEN NOW</a>
-        <a
-          href="tour"
-          class="border-2 border-repores-white text-repores-white rounded-full font-bold hover:bg-repores-white hover:text-repores-red transition-all duration-300
-                 text-sm px-4 py-2"
-        >TOUR DATES</a>
+        <a href="music" class="border-2 border-repores-white text-repores-white rounded-full font-bold hover:bg-repores-white hover:text-repores-red transition-all duration-300 text-sm px-4 py-2">LISTEN NOW</a>
+        <a href="tour" class="border-2 border-repores-white text-repores-white rounded-full font-bold hover:bg-repores-white hover:text-repores-red transition-all duration-300 text-sm px-4 py-2">TOUR DATES</a>
       </div>
     </div>
   </div>
@@ -173,42 +181,26 @@
   <!-- Latest Release Section -->
   <section class="py-16 bg-repores-white">
     <div class="container mx-auto px-4">
-      
-    <h2 class="text-4xl font-bold text-center mb-12 text-repores-red">LATEST RELEASE</h2>
+      <h2 class="text-4xl font-bold text-center mb-12 text-repores-red">LATEST RELEASE</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
         <div class="text-center md:text-left">
-          <h4 class="text-2xl font-bold text-repores-purple mb-4">
-            House Pets and Empty Threats
-          </h4>
-          <p class="text-lg mb-6">
-            Our debut EP is out now!
-          </p>
-          <a
-            href="https://album.link/thereporeshpaetep"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bg-repores-red text-repores-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 transition-colors duration-300 inline-block"
-            >STREAM NOW</a
-          >
+          <h4 class="text-2xl font-bold text-repores-purple mb-4">House Pets and Empty Threats</h4>
+          <p class="text-lg mb-6">Our debut EP is out now!</p>
+          <a href="https://album.link/thereporeshpaetep" target="_blank" rel="noopener noreferrer" class="bg-repores-red text-repores-white px-6 py-2 rounded-full font-bold hover:bg-opacity-90 transition-colors duration-300 inline-block">STREAM NOW</a>
         </div>
         <div class="flex justify-center">
-          <img
-            src="HPAETC.png"
-            alt="House Pets and Empty Threats EP Cover"
-            class="rounded-lg shadow-2xl transform hover:rotate-2 transition-transform duration-300"
-            loading="lazy"
-          />
+          <img src="HPAETC.png" alt="House Pets and Empty Threats EP Cover" class="rounded-lg shadow-2xl transform hover:rotate-2 transition-transform duration-300" loading="lazy" />
         </div>
       </div>
     </div>
   </section>
 
-<!-- The Band Section -->
+<!-- The Band Section (UPDATED WITH RHAD) -->
 <section class="py-16 bg-repores-black text-repores-white" id="the-band">
   <div class="container mx-auto px-4 text-center mb-12">
     <h3 class="text-3xl font-bold mb-8">THE BAND</h3>
 
-    <div id="band-grid" class="grid grid-cols-2 sm:grid-cols-5 gap-8 max-w-5xl mx-auto justify-center relative">
+    <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 max-w-5xl mx-auto justify-center relative">
       <div>
         <img src="XL.png" alt="Xavier Lane - Lead Vocals & Guitar" class="rounded-lg shadow-lg mx-auto" />
         <h4 class="mt-4 font-bold text-lg">Xavier Lane</h4>
@@ -223,22 +215,12 @@
 
       <!-- Cal Lawrence with Rhad interaction -->
       <div class="relative flex flex-col items-center" id="cal-container">
-        <div class="relative inline-block">
-          <!-- Cal image acts as a frame -->
-          <img
-            src="CL.png"
-            alt="Cal Lawrence - Drums"
-            id="cal-image"
-            class="rounded-lg shadow-lg mx-auto relative z-20"
-          />
+        <div class="relative inline-block overflow-hidden rounded-lg shadow-lg">
+          <!-- Cal image (front layer) -->
+          <img src="CL.png" alt="Cal Lawrence - Drums" id="cal-image" class="block mx-auto relative z-20" />
 
-          <!-- Rhad behind Cal, peeking from bottom -->
-          <img
-            src="RHAD.png"
-            alt="Rhad the Dog"
-            id="rhad-img"
-            class="absolute left-1/2 bottom-0 w-16 h-16 transform -translate-x-1/2 translate-y-full opacity-0 pointer-events-none transition-all duration-300 ease-out z-10"
-          />
+          <!-- Rhad behind Cal, peeking from top -->
+          <img src="RHAD.png" alt="Rhad the Dog" id="rhad-img" class="absolute left-1/2 top-0 w-16 h-16 transform -translate-x-1/2 -translate-y-full opacity-0 pointer-events-none transition-all duration-300 ease-out z-10" />
         </div>
 
         <h4 class="mt-4 font-bold text-lg">Cal Lawrence</h4>
@@ -259,17 +241,9 @@
     </div>
 
     <!-- Rhad info section (collapsed by default) -->
-    <div
-      id="rhad-info"
-      class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-out"
-    >
+    <div id="rhad-info" class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-out">
       <div class="flex flex-col items-center">
-        <img
-          src="RHAD.png"
-          alt="Rhad"
-          id="rhad-landing-img"
-          class="w-24 h-24 mb-4 opacity-0"
-        />
+        <img src="RHAD.png" alt="Rhad" id="rhad-landing-img" class="w-24 h-24 mb-4 opacity-0" />
         <h4 class="text-2xl font-bold text-repores-purple mb-2">Meet Rhad 🐶</h4>
         <p class="max-w-xl mx-auto text-base text-repores-white opacity-90">
           Rhad is The Repores' loyal mascot and spirit animal — equal parts chaos and charm.
@@ -280,138 +254,32 @@
   </div>
 </section>
 
-<script>
-  const calContainer = document.getElementById('cal-container');
-  const rhadImg = document.getElementById('rhad-img');
-  const rhadInfo = document.getElementById('rhad-info');
-  const rhadLandingImg = document.getElementById('rhad-landing-img');
-
-  let rhadVisible = false;
-  let peekTimer = null;
-  let rhadActivated = false;
-
-  function showRhadPeek() {
-    if (rhadVisible || rhadActivated) return;
-    rhadImg.classList.remove('pointer-events-none');
-    rhadImg.classList.remove('translate-y-full', 'opacity-0');
-    rhadImg.classList.add('opacity-100');
-    rhadImg.style.transform = 'translate(-50%, 40%)'; // only top of head visible
-    rhadVisible = true;
-
-    peekTimer = setTimeout(hideRhadPeek, 3000);
-  }
-
-  function hideRhadPeek() {
-    if (!rhadVisible || rhadActivated) return;
-    rhadImg.classList.add('opacity-0');
-    rhadImg.style.transform = 'translate(-50%, 100%)';
-    rhadImg.classList.add('pointer-events-none');
-    rhadVisible = false;
-  }
-
-  calContainer.addEventListener('mouseenter', () => {
-    showRhadPeek();
-  });
-
-  calContainer.addEventListener('mouseleave', () => {
-    if (!rhadVisible || rhadActivated) return;
-    clearTimeout(peekTimer);
-    peekTimer = setTimeout(hideRhadPeek, 500);
-  });
-
-  // Click only Rhad, not Cal
-  rhadImg.addEventListener('click', () => {
-    if (rhadActivated) return;
-    rhadActivated = true;
-    clearTimeout(peekTimer);
-
-    // Hide peek version
-    rhadImg.classList.add('opacity-0', 'pointer-events-none');
-    rhadVisible = false;
-
-    // Reveal info section
-    rhadInfo.classList.remove('opacity-0', 'max-h-0');
-    rhadInfo.classList.add('opacity-100');
-    rhadInfo.style.maxHeight = '400px';
-
-    // Simple landing bounce using CSS
-    rhadLandingImg.style.opacity = '1';
-    rhadLandingImg.classList.add('animate-bounce');
-
-    setTimeout(() => {
-      rhadLandingImg.classList.remove('animate-bounce');
-    }, 800);
-
-    rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  });
-</script>
-
-
   <!-- Join The Rhad Pack Section -->
   <section class="py-16 bg-repores-red">
-      <div class="max-w-4xl mx-auto">
-        <iframe
-          src="https://bandsintown.com/artist/15563423/email_signup_form?headerTextColor=rgba(250,250,250,1)&backgroundColor=rgba(235,29,76,1)&ctaBackgroundColor=rgba(104,14,210,1)&title=JOIN THE RHAD PACK!&headerTextStyle=normal&headerText=Sign Up for Our Mailing List&font=Helvetica&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=0px&ctaBorderColor=rgba(0,180,179,1)&ctaFontColor=rgba(255,255,255,1)&alignment=center&emailInputField=show&ctaLabel=Sign-Up&layout=wide&locale=en"
-          width="100%"
-          height="300px"
-          title="newsletter-widget"
-        ></iframe>
-    
-      </div>
+    <div class="max-w-4xl mx-auto">
+      <iframe
+        src="https://bandsintown.com/artist/15563423/email_signup_form?headerTextColor=rgba(250,250,250,1)&backgroundColor=rgba(235,29,76,1)&ctaBackgroundColor=rgba(104,14,210,1)&title=JOIN THE RHAD PACK!&headerTextStyle=normal&headerText=Sign Up for Our Mailing List&font=Helvetica&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=0px&ctaBorderColor=rgba(0,180,179,1)&ctaFontColor=rgba(255,255,255,1)&alignment=center&emailInputField=show&ctaLabel=Sign-Up&layout=wide&locale=en"
+        width="100%"
+        height="300px"
+        title="newsletter-widget"
+      ></iframe>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="bg-repores-black text-repores-white py-8">
     <div class="container mx-auto px-4">
-      <div
-        class="flex flex-col md:flex-row justify-between items-center mb-6"
-      >
+      <div class="flex flex-col md:flex-row justify-between items-center mb-6">
         <div>
           <h3 class="text-xl font-bold text-repores-red">THE REPORES</h3>
           <p class="text-sm opacity-80">Melbourne, Australia</p>
         </div>
-      <a href="contact" class="text-repores-white font-bold hover:text-repores-red transition-colors duration-300 text-center w-full md:w-auto">
-      Contact Us
-    </a>
+        <a href="contact" class="text-repores-white font-bold hover:text-repores-red transition-colors duration-300 text-center w-full md:w-auto">Contact Us</a>
         <div class="flex gap-6">
-          <a
-            href="https://www.instagram.com/the_repores/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
-            aria-label="Instagram"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a
-            href="https://www.youtube.com/@therepores"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
-            aria-label="YouTube"
-            ><i class="fab fa-youtube"></i
-          ></a>
-          <a
-            href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
-            aria-label="Spotify"
-            ><i class="fab fa-spotify"></i
-          ></a>
-          <a
-            href="https://music.apple.com/gb/artist/the-repores/1693825915"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
-            aria-label="Apple Music"
-            ><i class="fab fa-apple"></i
-            >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10a9.91 9.91 0 007.07-2.93c.4-.4.4-1.05 0-1.45a1.02 1.02 0 00-1.44-.07A8 8 0 0112 20a8 8 0 010-16zm3.64 11.13c.79 0 1.33.5 1.34 1.35.01.64-.41 1.13-1.03 1.28l-2.73.8a2.15 2.15 0 01-2.2-.66 2.51 2.51 0 01-.54-1.7c.01-1.11.9-2.01 2.15-2.01a2.09 2.09 0 011.86 1.14 2.04 2.04 0 011.13.2zm-6.97-2.7c.13.23.3.44.52.61a1.64 1.64 0 001.3.37 1.29 1.29 0 00.7-.58 2.52 2.52 0 00.28-1.22c0-.57-.31-1.13-.9-1.41-.69-.35-1.68-.33-2.04.59-.2.56.18 1.37.4 1.64zM17 15.54c-.36-.11-.7-.28-1-.51a1.94 1.94 0 01-1.34-1.15 3.53 3.53 0 01-.21-1.52 2.67 2.67 0 01.21-.74 1.68 1.68 0 01.61-.74c.4-.3 1.02-.5 1.39-.28.46.26.67 1.3.92 2.17a10.15 10.15 0 01-1.57 2.8z"
-              />
-            </svg></a
-          >
+          <a href="https://www.instagram.com/the_repores/" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.youtube.com/@therepores" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+          <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
         </div>
       </div>
       <div class="border-t border-gray-700 pt-8 text-center">
@@ -419,6 +287,75 @@
       </div>
     </div>
   </footer>
+
+  <!-- Rhad Interaction Script -->
+  <script>
+    const calContainer = document.getElementById('cal-container');
+    const rhadImg = document.getElementById('rhad-img');
+    const rhadInfo = document.getElementById('rhad-info');
+    const rhadLandingImg = document.getElementById('rhad-landing-img');
+    const pageRoot = document.documentElement;
+
+    let rhadVisible = false;
+    let peekTimer = null;
+    let rhadActivated = false;
+
+    function showRhadPeek() {
+      if (rhadVisible || rhadActivated) return;
+
+      rhadImg.classList.remove('pointer-events-none');
+      rhadImg.classList.remove('opacity-0', '-translate-y-full');
+      rhadImg.classList.add('opacity-100');
+      rhadImg.style.transform = 'translate(-50%, -40%)';
+      rhadVisible = true;
+
+      peekTimer = setTimeout(hideRhadPeek, 3000);
+    }
+
+    function hideRhadPeek() {
+      if (!rhadVisible || rhadActivated) return;
+      rhadImg.classList.add('opacity-0');
+      rhadImg.style.transform = 'translate(-50%, -100%)';
+      rhadImg.classList.add('pointer-events-none');
+      rhadVisible = false;
+    }
+
+    calContainer.addEventListener('mouseenter', () => {
+      showRhadPeek();
+    });
+
+    calContainer.addEventListener('mouseleave', () => {
+      if (!rhadVisible || rhadActivated) return;
+      clearTimeout(peekTimer);
+      peekTimer = setTimeout(hideRhadPeek, 500);
+    });
+
+    rhadImg.addEventListener('click', () => {
+      if (rhadActivated) return;
+      rhadActivated = true;
+      clearTimeout(peekTimer);
+
+      rhadImg.classList.add('rhad-jump-out');
+
+      setTimeout(() => {
+        rhadInfo.classList.remove('opacity-0', 'max-h-0');
+        rhadInfo.classList.add('opacity-100');
+        rhadInfo.style.maxHeight = '400px';
+
+        rhadLandingImg.style.opacity = '1';
+        rhadLandingImg.classList.add('rhad-landing');
+
+        pageRoot.classList.add('page-shake');
+        setTimeout(() => {
+          pageRoot.classList.remove('page-shake');
+        }, 400);
+
+        rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+        rhadImg.classList.add('opacity-0', 'pointer-events-none');
+      }, 600);
+    });
+  </script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
