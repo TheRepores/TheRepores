@@ -164,7 +164,7 @@
     }
 
     #rhad-img.jump {
-      animation: rhad-jump-leap 3.0s cubic-bezier(0.32, 0, 0.15, 1) forwards;
+      animation: rhad-jump-leap 3.5s cubic-bezier(0.32, 0, 0.15, 1) forwards;
       z-index: 50;
       opacity: 1;
     }
@@ -425,10 +425,10 @@
           rhadLandingImg.classList.add('rhad-landing');
 
           html.classList.add('page-shake');
-          setTimeout(() => html.classList.remove('page-shake'), 500);
+          setTimeout(() => html.classList.remove('page-shake'), 1000);
 
           rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 2500); // matches rhad-jump-leap duration
+        }, 3500); // matches rhad-jump-leap duration
       });
     });
   </script>
