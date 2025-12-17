@@ -66,17 +66,17 @@
       z-index: 10;
       transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
       pointer-events: none;
-      opacity: 0;
+      opacity: 0;            /* invisible when hidden */
     }
 
-    /* Peek (this was already perfect, kept as-is) */
+    /* Peek (keep as-is, since you said it's perfect) */
     #rhad-img.peek {
       transform: translateX(-50%) translateY(-120%);
       z-index: 20;
-      opacity: 1;
+      opacity: 1;            /* only here he becomes visible */
     }
 
-    /* Jump: clearly visible the whole time, arcing above CL + Cal text */
+    /* Jump: NO opacity changes – always visible */
     @keyframes rhad-jump-leap {
       0% {
         /* start from peek position above CL.png */
@@ -92,11 +92,11 @@
         transform: translateX(-50%) translateY(-260%) scale(1.8);
       }
       75% {
-        /* coming down toward the region of the Rhad section */
+        /* coming down toward the Rhad text region */
         transform: translateX(-50%) translateY(-150%) scale(1.5);
       }
       100% {
-        /* finishes above where the landing graphic will appear */
+        /* end above the final landing area (still centered) */
         transform: translateX(-50%) translateY(-80%) scale(1.2);
         z-index: 50;
       }
@@ -107,11 +107,10 @@
       z-index: 50;
     }
 
-    /* Landing: centered above "Meet Rhad" text */
+    /* Landing: perfectly centered above "Meet Rhad" */
     @keyframes rhad-land {
       0% {
         transform: translateX(-50%) translateY(-60px) scale(1.2);
-        opacity: 1;
       }
       40% {
         transform: translateX(-50%) translateY(10px) scale(1.25);
@@ -250,7 +249,7 @@
         </div>
       </div>
 
-      <!-- Rhad landing section -->
+      <!-- Rhad landing section - PERFECTLY CENTERED -->
       <div id="rhad-info" class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out">
         <div class="flex flex-col items-center">
           <img
