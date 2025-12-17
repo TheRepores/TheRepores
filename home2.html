@@ -76,34 +76,54 @@
       opacity: 1;
     }
 
-    /* NEW Jump: flies toward the screen, grows huge, then drops toward landing area */
+    /* Jump: many smooth keyframes, always visible, big toward screen then down toward landing */
     @keyframes rhad-jump-leap {
       0% {
-        /* start from peek position above CL.png */
         transform: translateX(-50%) translateY(-120%) scale(1);
         z-index: 40;
       }
-      25% {
-        /* lifts a bit higher and toward viewer */
-        transform: translateX(-50%) translateY(-180%) scale(1.6);
+      8% {
+        transform: translateX(-50%) translateY(-150%) scale(1.3);
       }
-      55% {
-        /* almost fills the page, roughly around mid‑screen */
-        transform: translateX(-50%) translateY(-50%) scale(4.0);
+      16% {
+        transform: translateX(-50%) translateY(-175%) scale(1.7);
+      }
+      24% {
+        transform: translateX(-50%) translateY(-195%) scale(2.1);
+      }
+      32% {
+        transform: translateX(-50%) translateY(-210%) scale(2.6);
+      }
+      40% {
+        transform: translateX(-50%) translateY(-220%) scale(3.1);
+      }
+      48% {
+        transform: translateX(-50%) translateY(-215%) scale(3.6);
+      }
+      56% {
+        transform: translateX(-50%) translateY(-200%) scale(4.0);
+      }
+      64% {
+        transform: translateX(-50%) translateY(-170%) scale(3.7);
+      }
+      72% {
+        transform: translateX(-50%) translateY(-135%) scale(3.0);
       }
       80% {
-        /* falling back down, shrinking toward landing region */
-        transform: translateX(-50%) translateY(-20%) scale(2.2);
+        transform: translateX(-50%) translateY(-110%) scale(2.4);
+      }
+      88% {
+        transform: translateX(-50%) translateY(-95%) scale(1.8);
       }
       100% {
-        /* ends just above the landing position area */
+        /* finishes just above where the landing animation takes over */
         transform: translateX(-50%) translateY(-80%) scale(1.4);
         z-index: 50;
       }
     }
 
     #rhad-img.jump {
-      animation: rhad-jump-leap 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      animation: rhad-jump-leap 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
       z-index: 50;
     }
 
@@ -268,7 +288,6 @@
           <h4 class="mt-20 text-2xl font-bold text-repores-red mb-2">MEET RHAD</h4>
           <p class="max-w-xl mx-auto text-base text-repores-white opacity-90">
             RHADAMANTHUS is The Repores’ own hound from hell. Now a lord of Elysium, Rhad haunts the border of life and death - as judge of the damned.
- 
           </p>
         </div>
       </div>
@@ -367,7 +386,7 @@
           setTimeout(() => html.classList.remove('page-shake'), 500);
 
           rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 1100); // matches new rhad-jump-leap duration
+        }, 1600); // match new rhad-jump-leap duration
       });
     });
   </script>
@@ -375,4 +394,3 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 </body>
 </html>
-
