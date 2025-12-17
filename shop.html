@@ -261,13 +261,13 @@
       currentSlide = (index + totalSlides) % totalSlides;
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
       
-      // Update dots: active = repores-purple, inactive = white/50
+      // Update dots: active = repores-red, inactive = white/50
       dots.forEach((dot, i) => {
         if (i === currentSlide) {
           dot.classList.remove('bg-white/50');
-          dot.classList.add('bg-repores-purple');
+          dot.classList.add('bg-repores-red');
         } else {
-          dot.classList.remove('bg-repores-purple');
+          dot.classList.remove('bg-repores-red');
           dot.classList.add('bg-white/50');
         }
       });
@@ -277,13 +277,13 @@
       dot.addEventListener('mouseenter', () => {
         if (i !== currentSlide) {
           dot.classList.remove('bg-white/50');
-          dot.classList.add('bg-repores-red');
+          dot.classList.add('bg-repores-purple');
         }
       });
       
       dot.addEventListener('mouseleave', () => {
         if (i !== currentSlide) {
-          dot.classList.remove('bg-repores-red');
+          dot.classList.remove('bg-repores-purple');
           dot.classList.add('bg-white/50');
         }
       });
