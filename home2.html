@@ -48,7 +48,7 @@
       100% { transform: scale(1); }
     }
 
-    /* === RHAD FIXED - COMPLETELY HIDDEN BEHIND CL.png === */
+    /* === RHAD PERFECTED === */
     #cal-frame {
       position: relative;
       display: inline-block;
@@ -56,45 +56,72 @@
     #rhad-img {
       position: absolute;
       left: 50%;
-      top: 20%; /* Positioned INSIDE CL.png bounds */
+      top: 20%;
       width: 72px;
       height: 72px;
       transform: translateX(-50%) translateY(0);
-      z-index: 10; /* Behind CL image */
-      transition: transform 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+      z-index: 10;
+      transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
       pointer-events: none;
-      opacity: 0; /* COMPLETELY HIDDEN by default */
+      opacity: 0;
     }
-    /* Peek: emerges from top of CL.png */
+    /* Smooth slide back DOWN when peek ends */
     #rhad-img.peek {
       transform: translateX(-50%) translateY(-120%);
       z-index: 20;
       opacity: 1;
     }
 
-    /* Jump: down + toward screen */
+    /* IMPROVED JUMP: toward screen (scale) + down, NO fade out */
     @keyframes rhad-jump-leap {
-      0% { transform: translate(-50%, -120%) scale(1); opacity: 1; }
-      25% { transform: translate(-50%, -80%) scale(1.4); }
-      50% { transform: translate(-50%, -20%) scale(1.8); }
-      75% { transform: translate(-50%, 10%) scale(1.3); }
-      100% { transform: translate(-50%, 30%) scale(1.1); }
+      0% { 
+        transform: translateX(-50%) translateY(-120%) scale(1) rotate(0deg); 
+        z-index: 20; 
+      }
+      20% { 
+        transform: translateX(-50%) translateY(-150%) scale(1.3) rotate(-5deg); 
+      }
+      50% { 
+        transform: translateX(-50%) translateY(-50%) scale(2.0) rotate(8deg); 
+      }
+      80% { 
+        transform: translateX(-50%) translateY(20%) scale(1.4) rotate(-3deg); 
+      }
+      100% { 
+        transform: translateX(-50%) translateY(40%) scale(1.15) rotate(0deg); 
+        z-index: 50; 
+      }
     }
     #rhad-img.jump {
-      animation: rhad-jump-leap 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-      z-index: 50;
+      animation: rhad-jump-leap 1.0s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
     }
 
-    /* Landing smooth bounce */
+    /* Landing matches jump end position perfectly */
     @keyframes rhad-land {
-      0% { transform: translateY(-40px) scale(1.2); opacity: 0; }
-      30% { transform: translateY(10px) scale(1.3); opacity: 1; }
-      60% { transform: translateY(-6px) scale(1.05); }
-      80% { transform: translateY(3px) scale(1.02); }
-      100% { transform: translateY(0) scale(1); }
+      0% { 
+        transform: translateX(-50%) translateY(-40px) scale(1.15) rotate(0deg); 
+        opacity: 1; 
+      }
+      30% { 
+        transform: translateX(-50%) translateY(8px) scale(1.25) rotate(2deg); 
+      }
+      60% { 
+        transform: translateX(-50%) translateY(-4px) scale(1.08); 
+      }
+      80% { 
+        transform: translateX(-50%) translateY(2px) scale(1.02); 
+      }
+      100% { 
+        transform: translateX(-50%) translateY(0px) scale(1) rotate(0deg); 
+      }
     }
     .rhad-landing {
-      animation: rhad-land 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      animation: rhad-land 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      width: 96px !important;  /* Slightly larger for landing */
+      height: 96px !important;
+      position: relative !important;
+      left: 50% !important;
+      transform-origin: center !important;
     }
 
     @keyframes page-shake {
@@ -173,7 +200,7 @@
     </div>
   </section>
 
-  <!-- BAND SECTION - RHAD NOW COMPLETELY HIDDEN -->
+  <!-- BAND SECTION - FIXED ANIMATIONS -->
   <section class="py-16 bg-repores-black text-repores-white">
     <div class="container mx-auto px-4 text-center mb-12">
       <h3 class="text-3xl font-bold mb-8">THE BAND</h3>
@@ -190,7 +217,6 @@
           <p class="text-sm text-repores-white opacity-80">Lead Guitar & Vocals</p>
         </div>
 
-        <!-- FIXED: Rhad completely hidden behind CL.png -->
         <div class="relative" id="cal-container">
           <div id="cal-frame" class="relative inline-block">
             <img src="CL.png" alt="Cal Lawrence - Drums" class="rounded-lg shadow-lg mx-auto block relative z-30" />
@@ -215,7 +241,7 @@
 
       <div id="rhad-info" class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out">
         <div class="flex flex-col items-center">
-          <img src="RHAD.png" id="rhad-landing-img" alt="Rhad" class="w-24 h-24 mb-4 opacity-0" />
+          <img src="RHAD.png" id="rhad-landing-img" alt="Rhad" class="w-24 h-24 mb-4 opacity-0 mx-auto" style="aspect-ratio: 1/1; object-fit: contain;" />
           <h4 class="text-2xl font-bold text-repores-purple mb-2">Meet Rhad 🐶</h4>
           <p class="max-w-xl mx-auto text-base text-repores-white opacity-90">
             Rhad is The Repores' loyal mascot and spirit animal — equal parts chaos and charm.
@@ -260,7 +286,7 @@
     </div>
   </footer>
 
-  <!-- Rhad Script (unchanged - works perfectly with new CSS) -->
+  <!-- Script unchanged - CSS handles all animation perfection -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const calContainer = document.getElementById('cal-container');
@@ -278,7 +304,7 @@
         isPeeking = true;
         rhadImg.classList.add('peek');
         rhadImg.style.pointerEvents = 'auto';
-        hideTimeout = setTimeout(hidePeek, 3000); // 3 seconds peek
+        hideTimeout = setTimeout(hidePeek, 3000);
       }
 
       function hidePeek() {
@@ -317,7 +343,7 @@
           setTimeout(() => html.classList.remove('page-shake'), 500);
 
           rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 900);
+        }, 1000); // Matches new jump duration
       });
     });
   </script>
