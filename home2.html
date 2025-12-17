@@ -78,15 +78,14 @@
     }
 
     /*
-      JUMP TOWARDS VIEWER (tweaked):
-      - Only ~20px upward change (from -120% to about -140%)
-      - Scales up to ~40x (instead of 50x)
-      - Lands ~120px lower than start (translateY from -120% down to ~+120px relative)
-      - 100 frames via dense percentage sampling
+      JUMP TOWARDS VIEWER: 
+      - Only 10-20px up movement
+      - Scales up to 35x max (reduced from 50x)
+      - Falls ~280px down from start position
+      - 100 frames (1% increments)
       - Fades out at end
     */
     @keyframes rhad-jump-leap {
-      /* start: just above Cal, normal size */
       0%   { transform: translateX(-50%) translateY(-120%) scale(1.0);  opacity: 1; }
       1%   { transform: translateX(-50%) translateY(-122%) scale(1.5);  opacity: 1; }
       2%   { transform: translateX(-50%) translateY(-124%) scale(2.0);  opacity: 1; }
@@ -107,20 +106,16 @@
       45%  { transform: translateX(-50%) translateY(-160%) scale(27.0); opacity: 1; }
       50%  { transform: translateX(-50%) translateY(-162%) scale(35.0); opacity: 1; } /* peak - 35x */
       55%  { transform: translateX(-50%) translateY(-162%) scale(35.0); opacity: 1; } /* pause */
-      60%  { transform: translateX(-50%) translateY(-150%) scale(28.0); opacity: 1; }
-      65%  { transform: translateX(-50%) translateY(-130%) scale(26.0); opacity: 1; }
-      70%  { transform: translateX(-50%) translateY(-100%) scale(24.0); opacity: 1; }
-      75%  { transform: translateX(-50%) translateY(-60%)  scale(22.0); opacity: 1; }
-      80%  { transform: translateX(-50%) translateY(-20%)  scale(20.0); opacity: 1; }
-      85%  { transform: translateX(-50%) translateY(40%)   scale(18.0); opacity: 1; }
-      90%  { transform: translateX(-50%) translateY(120%)  scale(15.0); opacity: 1; }
-      95%  { transform: translateX(-50%) translateY(220%)  scale(12.0); opacity: 1; }
-      99%  { transform: translateX(-50%) translateY(380%)  scale(5.0);  opacity: 1; }
-      100% { transform: translateX(-50%) translateY(400%)  scale(1.0);  opacity: 0; } /* ~280px down from start + fade */
-    }
-
-      /* final: about ~120px lower (visual), fade out */
-      100% { transform: translateX(-50%) translateY(120%)  scale(1.0);  opacity: 0; }
+      60%  { transform: translateX(-50%) translateY(-150%) scale(30.0); opacity: 1; }
+      65%  { transform: translateX(-50%) translateY(-130%) scale(25.0); opacity: 1; }
+      70%  { transform: translateX(-50%) translateY(-100%) scale(20.0); opacity: 1; }
+      75%  { transform: translateX(-50%) translateY(-60%)  scale(15.0); opacity: 1; }
+      80%  { transform: translateX(-50%) translateY(-20%)  scale(10.0); opacity: 1; }
+      85%  { transform: translateX(-50%) translateY(40%)   scale(7.0);  opacity: 1; }
+      90%  { transform: translateX(-50%) translateY(120%)  scale(4.0);  opacity: 1; }
+      95%  { transform: translateX(-50%) translateY(220%)  scale(2.0);  opacity: 1; }
+      99%  { transform: translateX(-50%) translateY(280%)  scale(1.2);  opacity: 1; }
+      100% { transform: translateX(-50%) translateY(280%)  scale(1.0);  opacity: 0; } /* 280px down, disappear */
     }
 
     #rhad-img.jump {
