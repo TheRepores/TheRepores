@@ -3,285 +3,323 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>The Repores - Music</title>
-      <link rel="icon" type="image/x-icon" href="Favicon.png">
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            "repores-red": "#eb1d4c",
-            "repores-purple": "#680ed2",
-            "repores-black": "#111111",
-            "repores-white": "#fafafa",
-          },
-          fontFamily: {
-            trebuchet: ["Trebuchet MS", "sans-serif"],
-          },
+<title>The Repores - Store</title>
+<link rel="icon" type="image/x-icon" href="Favicon.png">
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Trebuchet+MS:wght@400;700&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          "repores-red": "#eb1d4c",
+          "repores-purple": "#680ed2",
+          "repores-black": "#111111",
+          "repores-white": "#fafafa",
         },
+        fontFamily: { trebuchet: ["Trebuchet MS", "sans-serif"] },
       },
-    };
-  </script>
-  <style>
-    body {
-      font-family: "Trebuchet MS", sans-serif;
-    }
-    .pulse-animation {
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% {
-        transform: scale(1);
-      }
-      50% {
-        transform: scale(1.05);
-      }
-      100% {
-        transform: scale(1);
-      }
-    }
-  </style>
+    },
+  };
+</script>
+<style>
+  body { font-family: "Trebuchet MS", sans-serif; }
+  .pulse-animation { animation: pulse 2s infinite; }
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
+
+  /* Keep carousel fixed height but scale image */
+  .carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Prevent cropping */
+    background: #f4f4f4; /* Fills space when ratio doesn't match */
+  }
+</style>
 </head>
+
 <body class="bg-repores-white text-repores-black min-h-screen flex flex-col">
-  <!-- Navigation -->
-  <header
-    class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg"
-  >
-    <nav class="container mx-auto px-4 py-4">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-4 md:mb-0">
-          <img src="LOGO.png" alt="The Repores Logo" class="h-12 pulse-animation" />
-        </div>
-        <div class="flex flex-wrap justify-center gap-4 md:gap-8">
-          <a
-            href="/"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
-            aria-current="page"
-            >HOME</a
-          >
-          <a
-            href="tour"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
-            >TOUR</a
-          >
-          <a
-            href="news"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
-            >NEWS</a
-          >
-          <a
-            href="music"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold"
-            >MUSIC</a
-          >
-          <a
-            href="store"
-            class="text-repores-purple hover:text-repores-red transition-colors duration-300 font-bold"
-            >STORE</a
-          >
-        </div>
+
+<!-- Navigation -->
+<header class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg">
+  <nav class="container mx-auto px-4 py-4">
+    <div class="flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <img src="LOGO.png" alt="The Repores Logo" class="h-12 pulse-animation" />
       </div>
-    </nav>
-  </header>
-
-      <!-- Middle Section - Merchandise Store -->
-    <section class="py-16 bg-repores-white">
-        <div class="container mx-auto px-4">
-                <div class="container mx-auto px-4">
-    <h2 class="text-4xl font-bold text-center mb-4 text-repores-purple">
-      SHOP RHAD's RETAIL
-    </h2>
-
-<h2 class="text-4xl font-bold text-center mb-4 text-repores-purple">
-
-    </h2>
-            <!-- WEARABLES Carousel -->
-            <div class="mb-20">
-                <p class="text-2xl text-center font-bold text-xl mb-8 text-repores-red">CLOTHING & APPAREL</p>
-                <div class="max-w-4xl mx-auto">
-                    <div id="wearables-carousel" class="relative w-200 h-200 bg-gray-200 rounded-2xl shadow-2xl overflow-hidden" style="transform: translateX(0%);">
-                        <!-- Carousel Images - Replace src with actual images -->
-                        <div class="carousel-container absolute inset-0">
-                            <div class="carousel-track flex transition-transform duration-700 ease-in-out">
-                                <div class="carousel-slide w-full h-full flex-shrink-0">
-                                    <a href="https://www.redbubble.com/i/t-shirt/The-Repores-Logo-w-Outline-by-TheRepores/175429711.74GE1" target="_blank">
-                                        <img src="LOOTB.webp" alt="T-Shirt 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
-                                    </a>
-                                </div>
-                                <div class="carousel-slide w-full h-full flex-shrink-0">
-                                    <a href="https://www.examplelink.com" target="_blank">
-                                        <img src="PBC.jpg" alt="Hoodie 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
-                                    </a>
-                                </div>
-                                <div class="carousel-slide w-full h-full flex-shrink-0">
-                                    <a href="https://www.examplelink.com" target="_blank">
-                                        <img src="cap1.jpg" alt="Cap 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
-                                    </a>
-                                </div>
-                                <!-- Add more slides as needed -->
-                            </div>
-                        </div>
-                        <!-- Navigation Dots -->
-                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="0"></button>
-                            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="1"></button>
-                            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="2"></button>
-                        </div>
-                    </div>
-                    <div class="text-center mt-8">
-                        <a id="wearables-buy-btn" href="https://www.redbubble.com/people/therepores/shop" target="_blank" class="bg-repores-red text-repores-white px-8 py-4 rounded-full font-bold text-xl hover:bg-opacity-90 transition-colors duration-300 inline-block shadow-xl transform hover:scale-105 hover:-rotate-1 transition-all duration-300">SHOP MORE DESIGNS</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- NON-WEARABLES Carousel -->
-            <div class="mb-20">
-                <p class="text-2xl text-center font-bold text-xl mb-8 text-repores-red">STICKERS & POSTERS</p>
-                <div class="max-w-4xl mx-auto">
-                    <div id="nonwearables-carousel" class="relative w-full h-96 bg-gray-200 rounded-2xl shadow-2xl overflow-hidden">
-                        <div class="carousel-container absolute inset-0">
-                            <div class="carousel-track flex transition-transform duration-700 ease-in-out" style="transform: translateX(0%);">
-                                <div class="carousel-slide w-full h-full flex-shrink-0">
-                                    <a href="https://www.examplelink.com" target="_blank">
-                                        <img src="sticker1.jpg" alt="Sticker 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
-                                    </a>
-                                </div>
-                                <div class="carousel-slide w-full h-full flex-shrink-0">
-                                    <a href="https://www.examplelink.com" target="_blank">
-                                        <img src="poster1.jpg" alt="Poster 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
-                                    </a>
-                                </div>
-                                <div class="carousel-slide w-full h-full flex-shrink-0">
-                                    <a href="https://www.examplelink.com" target="_blank">
-                                        <img src="cd1.jpg" alt="CD 1" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="0"></button>
-                            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="1"></button>
-                            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="2"></button>
-                        </div>
-                    </div>
-                    <div class="text-center mt-8">
-                        <a id="nonwearables-buy-btn" href="https://www.redbubble.com/people/therepores/shop" target="_blank" class="bg-repores-red text-repores-white px-8 py-4 rounded-full font-bold text-xl hover:bg-opacity-90 transition-colors duration-300 inline-block shadow-xl transform hover:scale-105 hover:-rotate-1 transition-all duration-300">SHOP MORE DESIGNS</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- MEDIA Carousel -->
-            <div class="mb-20">
-                <p class="text-2xl text-center font-bold text-xl mb-8 text-repores-red">CDs & VINYL</p>
-                <div class="max-w-4xl mx-auto">
-                    <div id="media-carousel" class="relative w-full h-96 bg-gray-200 rounded-2xl shadow-2xl overflow-hidden">
-                        <div class="carousel-container absolute inset-0">
-                            <div class="carousel-track flex transition-transform duration-700 ease-in-out" style="transform: translateX(0%);">
-                                <div class="carousel-slide w-full h-full flex-shrink-0">
-                                    <a href="https://elasticstage.com/therepores/releases/house-pets-and-empty-threats-singleep" target="_blank">
-                                        <img src="EPCD.jpg" alt="EP CD" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
-                                    </a>
-                                </div>
-                                <div class="carousel-slide w-full h-full flex-shrink-0">
-                                    <a href="https://elasticstage.com/therepores/releases/house-pets-and-empty-threats-singleep" target="_blank">
-                                        <img src="EPV.jpg" alt="EP Vinyl" class="w-full h-full object-cover cursor-pointer hover:scale-105 transition-transform duration-300">
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-                            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="0"></button>
-                            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="1"></button>
-                        </div>
-                    </div>
-                    <div class="text-center mt-8">
-                        <a id="media-buy-btn" href="https://elasticstage.com/therepores/releases/house-pets-and-empty-threats-singleep" target="_blank" class="bg-repores-red text-repores-white px-8 py-4 rounded-full font-bold text-xl hover:bg-opacity-90 transition-colors duration-300 inline-block shadow-xl transform hover:scale-105 hover:-rotate-1 transition-all duration-300">SHOP MEDIA</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-  <!-- Join The Rhad Pack Section -->
-  <section class="py-16 bg-repores-red">
-      <div class="max-w-4xl mx-auto">
-        <iframe
-          src="https://bandsintown.com/artist/15563423/email_signup_form?headerTextColor=rgba(250,250,250,1)&backgroundColor=rgba(235,29,76,1)&ctaBackgroundColor=rgba(104,14,210,1)&title=JOIN THE RHAD PACK!&headerTextStyle=normal&headerText=Sign Up for Our Mailing List&font=Helvetica&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=0px&ctaBorderColor=rgba(0,180,179,1)&ctaFontColor=rgba(255,255,255,1)&alignment=center&emailInputField=show&ctaLabel=Sign-Up&layout=wide&locale=en"
-          width="100%"
-          height="300px"
-          title="newsletter-widget"
-        ></iframe>
-    
+      <div class="flex flex-wrap justify-center gap-4 md:gap-8">
+        <a href="/" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold" aria-current="page">HOME</a>
+        <a href="tour" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">TOUR</a>
+        <a href="news" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">NEWS</a>
+        <a href="music" class="text-repores-white hover:text-repores-red transition-colors duration-300 font-bold">MUSIC</a>
+        <a href="store" class="text-repores-purple hover:text-repores-red transition-colors duration-300 font-bold">STORE</a>
       </div>
     </div>
-  </section>
+  </nav>
+</header>
 
-  <!-- Footer -->
-  <footer class="bg-repores-black text-repores-white py-8">
-    <div class="container mx-auto px-4">
-      <div
-        class="flex flex-col md:flex-row justify-between items-center mb-6"
-      >
-        <div>
-          <h3 class="text-xl font-bold text-repores-red">THE REPORES</h3>
-          <p class="text-sm opacity-80">Melbourne, Australia</p>
+<!-- Middle Section - Merchandise Store -->
+<section class="py-16 bg-repores-white">
+  <div class="container mx-auto px-4">
+
+    <h2 class="text-4xl font-bold text-center mb-12 text-repores-purple">SHOP RHAD's RETAIL</h2>
+
+    <!-- Grid container for carousels (2x2 layout) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 justify-items-center">
+
+      <!-- WEARABLES Carousel -->
+      <div class="text-center w-full max-w-sm">
+        <p class="text-xl font-bold mb-4 text-repores-red">CLOTHING & APPAREL</p>
+        <div id="wearables-carousel" class="relative w-full aspect-square bg-gray-200 rounded-2xl shadow-2xl overflow-hidden">
+          <div class="carousel-container absolute inset-0">
+            <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://www.redbubble.com/i/hat/Rhadamanthus-w-Outline-by-TheRepores/175429640.9AAXL" target="_blank">
+                  <img src="S1.png" alt="Cap" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://www.redbubble.com/i/t-shirt/Rhadamanthus-by-TheRepores/175378580.VL7OD" target="_blank">
+                  <img src="S2.png" alt="Shirt" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://www.redbubble.com/i/t-shirt/The-Repores-Logo-by-TheRepores/175402434.5U9OZ" target="_blank">
+                  <img src="S3.png" alt="Shirt" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://www.redbubble.com/i/hoodie/The-Repores-Logo-w-Outline-by-TheRepores/175429711.O6XP1" target="_blank">
+                  <img src="S4.png" alt="Hoodie" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="0"></button>
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="1"></button>
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="2"></button>
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="3"></button>
+          </div>
         </div>
-      <a href="contact" class="text-repores-white font-bold hover:text-repores-red transition-colors duration-300 text-center w-full md:w-auto">
-      Contact Us
-    </a>
-        <div class="flex gap-6">
-          <a
-            href="https://www.instagram.com/the_repores/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
-            aria-label="Instagram"
-            ><i class="fab fa-instagram"></i
-          ></a>
-          <a
-            href="https://www.youtube.com/@therepores"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
-            aria-label="YouTube"
-            ><i class="fab fa-youtube"></i
-          ></a>
-          <a
-            href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
-            aria-label="Spotify"
-            ><i class="fab fa-spotify"></i
-          ></a>
-          <a
-            href="https://music.apple.com/gb/artist/the-repores/1693825915"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"
-            aria-label="Apple Music"
-            ><i class="fab fa-apple"></i
-            >
-              <path
-                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10a9.91 9.91 0 007.07-2.93c.4-.4.4-1.05 0-1.45a1.02 1.02 0 00-1.44-.07A8 8 0 0112 20a8 8 0 010-16zm3.64 11.13c.79 0 1.33.5 1.34 1.35.01.64-.41 1.13-1.03 1.28l-2.73.8a2.15 2.15 0 01-2.2-.66 2.51 2.51 0 01-.54-1.7c.01-1.11.9-2.01 2.15-2.01a2.09 2.09 0 011.86 1.14 2.04 2.04 0 011.13.2zm-6.97-2.7c.13.23.3.44.52.61a1.64 1.64 0 001.3.37 1.29 1.29 0 00.7-.58 2.52 2.52 0 00.28-1.22c0-.57-.31-1.13-.9-1.41-.69-.35-1.68-.33-2.04.59-.2.56.18 1.37.4 1.64zM17 15.54c-.36-.11-.7-.28-1-.51a1.94 1.94 0 01-1.34-1.15 3.53 3.53 0 01-.21-1.52 2.67 2.67 0 01.21-.74 1.68 1.68 0 01.61-.74c.4-.3 1.02-.5 1.39-.28.46.26.67 1.3.92 2.17a10.15 10.15 0 01-1.57 2.8z"
-              />
-            </svg></a
-          >
-        </div>
+        <a href="https://www.redbubble.com/people/therepores/shop" target="_blank"
+           class="inline-block mt-6 bg-repores-red text-repores-white px-6 py-3 rounded-full font-bold text-lg hover:bg-opacity-90 shadow-lg transform hover:scale-105 transition-all duration-300">
+           SHOP DESIGNS</a>
       </div>
-      <div class="border-t border-gray-700 pt-8 text-center">
-        <p>&copy; 2025 The Repores. All rights reserved. Website by Cal Lawrence</p>
+
+      <!-- NON-WEARABLES Carousel -->
+      <div class="text-center w-full max-w-sm">
+        <p class="text-xl font-bold mb-4 text-repores-red">STICKERS, MAGNETS & POSTERS</p>
+        <div id="nonwearables-carousel" class="relative w-full aspect-square bg-gray-200 rounded-2xl shadow-2xl overflow-hidden">
+          <div class="carousel-container absolute inset-0">
+            <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://www.redbubble.com/i/poster/Silver-Beans-Single-Cover-by-TheRepores/176100560.FTILD" target="_blank">
+                  <img src="S5.png" alt="Poster" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://www.redbubble.com/i/sticker/House-Pets-and-Empty-Threats-EP-Cover-by-TheRepores/176100591.QK27K" target="_blank">
+                  <img src="S6.png" alt="Sticker" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://www.redbubble.com/i/sticker/The-Repores-Logo-by-TheRepores/175402434.O9UDB" target="_blank">
+                  <img src="S7.png" alt="Sticker" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://www.redbubble.com/i/magnet/Rhadamanthus-by-TheRepores/175378580.FRP2L" target="_blank">
+                  <img src="S8.png" alt="Magnet" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="0"></button>
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="1"></button>
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="2"></button>
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="3"></button>
+          </div>
+        </div>
+        <a href="https://www.redbubble.com/people/therepores/shop" target="_blank"
+           class="inline-block mt-6 bg-repores-red text-repores-white px-6 py-3 rounded-full font-bold text-lg hover:bg-opacity-90 shadow-lg transform hover:scale-105 transition-all duration-300">
+           SHOP DESIGNS</a>
+      </div>
+
+      <!-- MEDIA Carousel -->
+      <div class="text-center w-full max-w-sm">
+        <p class="text-xl font-bold mb-4 text-repores-red">CDs & VINYL</p>
+        <div id="media-carousel" class="relative w-full aspect-square bg-gray-200 rounded-2xl shadow-2xl overflow-hidden">
+          <div class="carousel-container absolute inset-0">
+            <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://elasticstage.com/therepores/releases/house-pets-and-empty-threats-singleep" target="_blank">
+                  <img src="S9.png" alt="EP CD" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://elasticstage.com/therepores/releases/house-pets-and-empty-threats-singleep" target="_blank">
+                  <img src="S10.png" alt="EP Vinyl" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="0"></button>
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="1"></button>
+          </div>
+        </div>
+        <a href="https://elasticstage.com/therepores/releases/house-pets-and-empty-threats-singleep" target="_blank"
+           class="inline-block mt-6 bg-repores-red text-repores-white px-6 py-3 rounded-full font-bold text-lg hover:bg-opacity-90 shadow-lg transform hover:scale-105 transition-all duration-300">
+           SHOP MEDIA</a>
+      </div>
+
+      <!-- BANDCAMP EXCLUSIVES Carousel (NOW INSIDE GRID) -->
+      <div class="text-center w-full max-w-sm">
+        <p class="text-xl font-bold mb-4 text-repores-red">BANDCAMP EXCLUSIVES</p>
+        <div id="bandcamp-carousel" class="relative w-full aspect-square bg-gray-200 rounded-2xl shadow-2xl overflow-hidden">
+          <div class="carousel-container absolute inset-0">
+            <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://therepores.bandcamp.com/album/house-pets-and-empty-threats" target="_blank">
+                  <img src="EEPCD.png" alt="EXCLUSIVE EP CD" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+              <div class="carousel-slide w-full h-full flex-shrink-0">
+                <a href="https://therepores.bandcamp.com/merch/classic-logo" target="_blank">
+                  <img src="CT.png" alt="Logo T-Shirt" class="w-full h-full object-contain cursor-pointer hover:scale-105 transition-transform duration-300">
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex gap-2">
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="0"></button>
+            <button class="carousel-dot w-3 h-3 bg-white/50 rounded-full hover:bg-white transition-colors" data-slide="1"></button>
+          </div>
+        </div>
+        <a href="https://therepores.bandcamp.com/merch" target="_blank"
+           class="inline-block mt-6 bg-repores-red text-repores-white px-6 py-3 rounded-full font-bold text-lg hover:bg-opacity-90 shadow-lg transform hover:scale-105 transition-all duration-300">
+           SHOP EXCLUSIVES</a>
+      </div>
+
+    </div> <!-- ← GRID CONTAINER NOW PROPERLY CLOSED -->
+
+  </div>
+</section>
+
+<!-- Join The Rhad Pack Section -->
+<section class="py-16 bg-repores-red">
+  <div class="max-w-4xl mx-auto">
+    <iframe src="https://bandsintown.com/artist/15563423/email_signup_form?headerTextColor=rgba(250,250,250,1)&backgroundColor=rgba(235,29,76,1)&ctaBackgroundColor=rgba(104,14,210,1)&title=JOIN THE RHAD PACK!&headerTextStyle=normal&headerText=Sign Up for Our Mailing List&font=Helvetica&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=0px&ctaBorderColor=rgba(0,180,179,1)&ctaFontColor=rgba(255,255,255,1)&alignment=center&emailInputField=show&ctaLabel=Sign-Up&layout=wide&locale=en"
+      width="100%" height="300px" title="newsletter-widget"></iframe>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-repores-black text-repores-white py-8">
+  <div class="container mx-auto px-4">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6">
+      <div>
+        <h3 class="text-xl font-bold text-repores-red">THE REPORES</h3>
+        <p class="text-sm opacity-80">Melbourne, Australia</p>
+      </div>
+      <a href="contact" class="text-repores-white font-bold hover:text-repores-red transition-colors duration-300 text-center w-full md:w-auto">Contact Us</a>
+      <div class="flex gap-6">
+        <a href="https://www.instagram.com/the_repores/" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@therepores" target="_blank" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"><i class="fab fa-youtube"></i></a>
+        <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"><i class="fab fa-spotify"></i></a>
+        <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl"><i class="fab fa-apple"></i></a>
       </div>
     </div>
-  </footer>
+    <div class="border-t border-gray-700 pt-8 text-center">
+      <p>&copy; 2025 The Repores. All rights reserved. Website by Cal Lawrence</p>
+    </div>
+  </div>
+</footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+
+<!-- Carousel functionality (auto + swipe + pause on hover) -->
+<script>
+  function initCarousel(carouselId) {
+    const carousel = document.getElementById(carouselId);
+    if (!carousel) return;
+
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+    const dots = Array.from(carousel.querySelectorAll('.carousel-dot'));
+    let currentSlide = 0;
+    const totalSlides = slides.length;
+    const interval = 4000;
+    let startX = 0, endX = 0, autoSlide;
+
+    function goToSlide(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      // Update dots: active = repores-red, inactive = white/50
+      dots.forEach((dot, i) => {
+        if (i === currentSlide) {
+          dot.classList.remove('bg-white/50');
+          dot.classList.add('bg-repores-red');
+        } else {
+          dot.classList.remove('bg-repores-red');
+          dot.classList.add('bg-white/50');
+        }
+      });
+    }
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('mouseenter', () => {
+        if (i !== currentSlide) {
+          dot.classList.remove('bg-white/50');
+          dot.classList.add('bg-repores-purple');
+        }
+      });
+      
+      dot.addEventListener('mouseleave', () => {
+        if (i !== currentSlide) {
+          dot.classList.remove('bg-repores-purple');
+          dot.classList.add('bg-white/50');
+        }
+      });
+      
+      dot.addEventListener('click', () => {
+        goToSlide(i);
+        resetAutoSlide();
+      });
+    });
+
+    function startAutoSlide() {
+      autoSlide = setInterval(() => goToSlide(currentSlide + 1), interval);
+    }
+
+    function resetAutoSlide() {
+      clearInterval(autoSlide);
+      startAutoSlide();
+    }
+
+    carousel.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+    carousel.addEventListener('touchmove', e => endX = e.touches[0].clientX);
+    carousel.addEventListener('touchend', () => {
+      if (startX - endX > 50) { goToSlide(currentSlide + 1); resetAutoSlide(); }
+      else if (endX - startX > 50) { goToSlide(currentSlide - 1); resetAutoSlide(); }
+    });
+
+    carousel.addEventListener('mouseenter', () => clearInterval(autoSlide));
+    carousel.addEventListener('mouseleave', startAutoSlide);
+
+    goToSlide(0);
+    startAutoSlide();
+  }
+
+  ['wearables-carousel', 'nonwearables-carousel', 'media-carousel', 'bandcamp-carousel'].forEach(initCarousel);
+</script>
+
+
 </body>
 </html>
