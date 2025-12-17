@@ -98,45 +98,51 @@
   </header>
 
 <!-- Rock The Night Section -->
-<section class="relative bg-black text-repores-white">
-  <!-- Responsive full-width image -->
+<section class="relative bg-black text-repores-white overflow-hidden">
+  <!-- Desktop image (landscape) -->
   <img
     src="BANDPHOTO1.jpg"
     alt="The Repores band photo"
-    class="w-full h-auto block"
+    class="hero-img-desktop w-full h-auto hidden md:block"
   />
 
-  <!-- Text overlay -->
+  <!-- Mobile image (portrait / more vertical) -->
+  <img
+    src="BANDPHOTOMOBILE.jpg"
+    alt="The Repores band photo mobile"
+    class="hero-img-mobile w-full h-auto block md:hidden"
+  />
+
+  <!-- Text overlay (no black backdrop) -->
   <div class="absolute inset-x-0 top-0">
-    <div class="container mx-auto px-4 pt-4 pb-3 text-center">
-      <div class="inline-block px-3 py-2 sm:px-4 sm:py-3 bg-black bg-opacity-20 rounded-lg max-w-3xl mx-auto">
-        <h2 class="font-bold mb-2
-                   text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-          WHO'S HERE TO DANCE?
-        </h2>
-        <p class="mb-3 mx-auto
-                  text-sm sm:text-base md:text-lg lg:text-2xl
-                  max-w-xl">
-          The Repores are serving up some of the freshest alternative rock and danceable bops in the Melbourne/Naarm scene. At their shows, people don’t roll until after the floor starts rocking.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center">
-          <a
-            href="music"
-            class="border-2 border-repores-white text-repores-white rounded-full font-bold transition-all duration-300
-                   text-sm sm:text-base lg:text-lg
-                   px-4 py-2 sm:px-6 sm:py-3"
-          >LISTEN NOW</a>
-          <a
-            href="tour"
-            class="border-2 border-repores-white text-repores-white rounded-full font-bold transition-all duration-300
-                   text-sm sm:text-base lg:text-lg
-                   px-4 py-2 sm:px-6 sm:py-3"
-          >TOUR DATES</a>
-        </div>
+    <div class="container mx-auto px-4 pt-6 pb-3 text-center">
+      <h2 class="font-bold mb-2
+                 text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+        WHO'S HERE TO DANCE?
+      </h2>
+      <p class="mb-4 mx-auto
+                text-sm sm:text-base md:text-lg lg:text-2xl
+                max-w-xl md:max-w-2xl">
+        The Repores are serving up some of the freshest alternative rock and danceable bops in the Melbourne/Naarm scene. At their shows, people don’t roll until after the floor starts rocking.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 justify-center">
+        <a
+          href="music"
+          class="border-2 border-repores-white text-repores-white rounded-full font-bold transition-all duration-300
+                 text-sm sm:text-base lg:text-lg
+                 px-4 py-2 sm:px-6 sm:py-3"
+        >LISTEN NOW</a>
+        <a
+          href="tour"
+          class="border-2 border-repores-white text-repores-white rounded-full font-bold transition-all duration-300
+                 text-sm sm:text-base lg:text-lg
+                 px-4 py-2 sm:px-6 sm:py-3"
+        >TOUR DATES</a>
       </div>
     </div>
   </div>
 </section>
+
  
   <!-- Latest Release Section -->
   <section class="py-16 bg-repores-white">
