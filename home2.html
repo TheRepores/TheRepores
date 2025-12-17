@@ -42,28 +42,77 @@
       100% { transform: scale(1); }
     }
 
-    /* Rhad Animations - FIXED */
+    /* FIXED Rhad - peeks FROM BEHIND, same size as other images */
+    .band-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    /* Rhad peek - starts completely hidden BEHIND top edge */
     @keyframes rhad-peek {
-      from { transform: translate(-50%, -100%) scale(0.8); opacity: 0; }
-      to { transform: translate(-50%, -60%) scale(1); opacity: 1; }
+      0% { 
+        transform: translateX(-50%) translateY(-100%) scale(0.3); 
+        opacity: 0; 
+      }
+      100% { 
+        transform: translateX(-50%) translateY(-75%) scale(0.9); 
+        opacity: 1; 
+      }
     }
+
     @keyframes rhad-hide {
-      from { transform: translate(-50%, -60%) scale(1); opacity: 1; }
-      to { transform: translate(-50%, -100%) scale(0.8); opacity: 0; }
+      0% { 
+        transform: translateX(-50%) translateY(-75%) scale(0.9); 
+        opacity: 1; 
+      }
+      100% { 
+        transform: translateX(-50%) translateY(-100%) scale(0.3); 
+        opacity: 0; 
+      }
     }
-    @keyframes rhad-jump-out {
-      0% { transform: translate(-50%, -60%) scale(1); opacity: 1; }
-      40% { transform: translate(-50%, -80px) scale(1.4); opacity: 1; }
-      70% { transform: translate(-50%, -20px) scale(1.3); opacity: 1; }
-      100% { transform: translate(-50%, 0) scale(0.3); opacity: 0; }
+
+    /* Jump OUT toward viewer - gets BIGGER */
+    @keyframes rhad-jump-forward {
+      0% { 
+        transform: translateX(-50%) translateY(-75%) scale(0.9) rotate(0deg); 
+        opacity: 1; 
+      }
+      30% { 
+        transform: translateX(-50%) translateY(-120px) scale(1.8) rotate(-5deg); 
+        opacity: 1; 
+      }
+      60% { 
+        transform: translateX(-50%) translateY(-40px) scale(1.4) rotate(2deg); 
+        opacity: 1; 
+      }
+      100% { 
+        transform: translateX(-50%) translateY(0px) scale(0.4) rotate(0deg); 
+        opacity: 0; 
+      }
     }
+
+    /* Land in position - gets SMALLER then settles */
     @keyframes rhad-land {
-      0% { transform: translateY(-40px) scale(0.6); opacity: 0; }
-      30% { transform: translateY(8px) scale(1.15); opacity: 1; }
-      60% { transform: translateY(-4px) scale(1); }
-      80% { transform: translateY(4px) scale(1.05); }
-      100% { transform: translateY(0) scale(1); opacity: 1; }
+      0% { 
+        transform: translateY(-60px) scale(0.4); 
+        opacity: 0; 
+      }
+      25% { 
+        transform: translateY(12px) scale(1.3); 
+      }
+      50% { 
+        transform: translateY(-8px) scale(1.05); 
+      }
+      75% { 
+        transform: translateY(4px) scale(1.02); 
+      }
+      100% { 
+        transform: translateY(0) scale(1); 
+        opacity: 1; 
+      }
     }
+
     @keyframes page-shake {
       0%, 100% { transform: translateX(0); }
       20% { transform: translateX(-4px); }
@@ -74,13 +123,13 @@
 
     .rhad-peek { animation: rhad-peek 0.4s ease-out forwards; }
     .rhad-hide { animation: rhad-hide 0.4s ease-in forwards; }
-    .rhad-jump-out { animation: rhad-jump-out 0.7s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards; }
-    .rhad-landing { animation: rhad-land 0.6s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards; }
+    .rhad-jump-forward { animation: rhad-jump-forward 0.8s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards; }
+    .rhad-landing { animation: rhad-land 0.7s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards; }
     .page-shake { animation: page-shake 0.5s ease-in-out; }
   </style>
 </head>
 <body class="bg-repores-white text-repores-black font-trebuchet min-h-screen">
-  <!-- [Previous sections unchanged - Navigation, Hero, Latest Release] -->
+  <!-- Navigation (unchanged) -->
   <header class="bg-repores-black text-repores-white sticky top-0 z-50 shadow-lg">
     <nav class="container mx-auto px-4 py-4">
       <div class="flex flex-col md:flex-row justify-between items-center">
@@ -102,7 +151,6 @@
   <section class="relative bg-black text-repores-white overflow-hidden">
     <img src="BANDPHOTO1.jpg" alt="The Repores band photo" class="w-full h-auto hidden md:block" />
     <img src="BANDPHOTOMOBILE.jpg" alt="The Repores band photo mobile" class="w-full h-auto block md:hidden" />
-    <!-- [Mobile/Desktop overlays unchanged] -->
     <div class="hidden md:block absolute inset-x-0 top-0">
       <div class="container mx-auto px-4 pt-20 lg:pt-24 pb-4 text-center">
         <h2 class="font-bold mb-3 text-4xl md:text-5xl lg:text-6xl">WHO'S HERE TO DANCE?</h2>
@@ -146,43 +194,47 @@
     </div>
   </section>
 
-  <!-- FIXED Band Section -->
+  <!-- PERFECTED Band Section -->
   <section class="py-16 bg-repores-black text-repores-white" id="the-band">
     <div class="container mx-auto px-4 text-center">
       <h3 class="text-3xl font-bold mb-8">THE BAND</h3>
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-8 max-w-5xl mx-auto justify-center relative">
         <div>
-          <img src="XL.png" alt="Xavier Lane - Lead Vocals & Guitar" class="rounded-lg shadow-lg mx-auto" />
+          <img src="XL.png" alt="Xavier Lane" class="band-img rounded-lg shadow-lg mx-auto block" />
           <h4 class="mt-4 font-bold text-lg">Xavier Lane</h4>
           <p class="text-sm opacity-80">Lead Vocals & Guitar</p>
         </div>
         <div>
-          <img src="AC.png" alt="Angus Cole - Lead Guitar & Vocals" class="rounded-lg shadow-lg mx-auto" />
+          <img src="AC.png" alt="Angus Cole" class="band-img rounded-lg shadow-lg mx-auto block" />
           <h4 class="mt-4 font-bold text-lg">Angus Cole</h4>
           <p class="text-sm opacity-80">Lead Guitar & Vocals</p>
         </div>
 
-        <!-- FIXED Cal + Rhad -->
+        <!-- Cal + Rhad PERFECTED -->
         <div class="relative" id="cal-container">
-          <img src="CL.png" alt="Cal Lawrence - Drums" class="rounded-lg shadow-lg mx-auto relative z-20 block w-32 h-32 object-cover" />
-          <img src="RHAD.png" id="rhad-img" alt="Rhad peeking" class="absolute left-1/2 top-0 -translate-x-1/2 w-20 h-20 z-10 cursor-pointer" style="transform: translate(-50%, -100%) scale(0.8); opacity: 0;" />
+          <!-- Cal image - SAME SIZE as others -->
+          <img src="CL.png" alt="Cal Lawrence" class="band-img rounded-lg shadow-lg mx-auto block relative z-20" />
+          
+          <!-- Rhad - PEEKING FROM BEHIND TOP EDGE -->
+          <img src="RHAD.png" id="rhad-img" alt="Rhad" class="absolute left-1/2 top-0 w-20 h-20 z-10 cursor-pointer pointer-events-none" style="transform: translateX(-50%) translateY(-100%) scale(0.3); opacity: 0;" />
+
           <h4 class="mt-4 font-bold text-lg">Cal Lawrence</h4>
           <p class="text-sm opacity-80">Drums & Percussion</p>
         </div>
 
         <div>
-          <img src="JP.png" alt="Jimmy Prendergast - Bass" class="rounded-lg shadow-lg mx-auto" />
+          <img src="JP.png" alt="Jimmy Prendergast" class="band-img rounded-lg shadow-lg mx-auto block" />
           <h4 class="mt-4 font-bold text-lg">Jimmy Prendergast</h4>
           <p class="text-sm opacity-80">Bass</p>
         </div>
         <div>
-          <img src="AL.png" alt="Alex Lutton - Keyboards" class="rounded-lg shadow-lg mx-auto" />
+          <img src="AL.png" alt="Alex Lutton" class="band-img rounded-lg shadow-lg mx-auto block" />
           <h4 class="mt-4 font-bold text-lg">Alex Lutton</h4>
           <p class="text-sm opacity-80">Keyboards & Percussion</p>
         </div>
       </div>
 
-      <!-- Rhad info (hidden by default) -->
+      <!-- Rhad landing section -->
       <div id="rhad-info" class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-500 ease-out">
         <div class="flex flex-col items-center">
           <img src="RHAD.png" id="rhad-landing-img" alt="Rhad" class="w-24 h-24 mb-4" />
@@ -193,7 +245,7 @@
     </div>
   </section>
 
-  <!-- [Newsletter and Footer unchanged] -->
+  <!-- Newsletter & Footer (unchanged) -->
   <section class="py-16 bg-repores-red">
     <div class="max-w-4xl mx-auto">
       <iframe src="https://bandsintown.com/artist/15563423/email_signup_form?headerTextColor=rgba(250,250,250,1)&backgroundColor=rgba(235,29,76,1)&ctaBackgroundColor=rgba(104,14,210,1)&title=JOIN THE RHAD PACK!&headerTextStyle=normal&headerText=Sign Up for Our Mailing List&font=Helvetica&ctaIcon=show&ctaBorderRadius=4px&ctaBorderWidth=0px&ctaBorderColor=rgba(0,180,179,1)&ctaFontColor=rgba(255,255,255,1)&alignment=center&emailInputField=show&ctaLabel=Sign-Up&layout=wide&locale=en" width="100%" height="300px" title="newsletter-widget"></iframe>
@@ -221,7 +273,7 @@
     </div>
   </footer>
 
-  <!-- FIXED Rhad Script -->
+  <!-- FINAL Rhad Script -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const calContainer = document.getElementById('cal-container');
@@ -237,9 +289,9 @@
       function showPeek() {
         if (isPeeking || isActivated) return;
         isPeeking = true;
+        rhadImg.style.pointerEvents = 'auto';
         rhadImg.classList.remove('rhad-hide');
         rhadImg.classList.add('rhad-peek');
-        rhadImg.style.pointerEvents = 'auto';
         
         hideTimeout = setTimeout(hidePeek, 3000);
       }
@@ -265,24 +317,24 @@
         isActivated = true;
         clearTimeout(hideTimeout);
         
-        // Jump out animation
+        // JUMP FORWARD (gets BIGGER!)
         rhadImg.classList.remove('rhad-peek');
-        rhadImg.classList.add('rhad-jump-out');
+        rhadImg.classList.add('rhad-jump-forward');
         
         setTimeout(() => {
-          // Show landing section
+          // Expand section + land (gets SMALLER then settles)
           rhadInfo.classList.remove('opacity-0', 'max-h-0');
           rhadInfo.classList.add('opacity-100');
           rhadInfo.style.maxHeight = '500px';
           
           rhadLandingImg.classList.add('rhad-landing');
           
-          // Page shake
+          // SHAKE (you love this part!)
           html.classList.add('page-shake');
           setTimeout(() => html.classList.remove('page-shake'), 500);
           
           rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 700);
+        }, 800);
       });
     });
   </script>
