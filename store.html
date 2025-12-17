@@ -261,29 +261,29 @@
       currentSlide = (index + totalSlides) % totalSlides;
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
       
-      // Update dots: active = repores-red, inactive = white/50
+      // Reset ALL dots to base state first, then set active
       dots.forEach((dot, i) => {
+        dot.classList.remove('bg-repores-purple', 'bg-repores-red', 'bg-white/50');
         if (i === currentSlide) {
-          dot.classList.remove('bg-white/50');
-          dot.classList.add('bg-repores-red');
+          dot.classList.add('bg-repores-purple');
         } else {
-          dot.classList.remove('bg-repores-red');
           dot.classList.add('bg-white/50');
         }
       });
     }
 
     dots.forEach((dot, i) => {
+      // HOVER: repores-red (only non-active dots)
       dot.addEventListener('mouseenter', () => {
         if (i !== currentSlide) {
           dot.classList.remove('bg-white/50');
-          dot.classList.add('bg-repores-purple');
+          dot.classList.add('bg-repores-red');
         }
       });
       
       dot.addEventListener('mouseleave', () => {
         if (i !== currentSlide) {
-          dot.classList.remove('bg-repores-purple');
+          dot.classList.remove('bg-repores-red');
           dot.classList.add('bg-white/50');
         }
       });
@@ -319,6 +319,7 @@
 
   ['wearables-carousel', 'nonwearables-carousel', 'media-carousel', 'bandcamp-carousel'].forEach(initCarousel);
 </script>
+
 
 
 </body>
