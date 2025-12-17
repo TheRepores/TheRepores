@@ -57,71 +57,77 @@
       position: absolute;
       left: 50%;
       top: 20%;
-      width: 72px;
-      height: 72px;
+      width: 72px !important;
+      height: 72px !important;
+      object-fit: contain;
       transform: translateX(-50%) translateY(0);
       z-index: 10;
       transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
       pointer-events: none;
       opacity: 0;
     }
-    /* Smooth slide back DOWN when peek ends */
+    /* Peek: perfect slide up from behind */
     #rhad-img.peek {
       transform: translateX(-50%) translateY(-120%);
       z-index: 20;
       opacity: 1;
     }
 
-    /* IMPROVED JUMP: toward screen (scale) + down, NO fade out */
+    /* JUMP: arcs OVER CL.png to page center, then DOWN to landing spot */
     @keyframes rhad-jump-leap {
       0% { 
         transform: translateX(-50%) translateY(-120%) scale(1) rotate(0deg); 
-        z-index: 20; 
+        position: absolute; left: 50%; top: 20%; 
       }
       20% { 
-        transform: translateX(-50%) translateY(-150%) scale(1.3) rotate(-5deg); 
+        transform: translateX(-50%) translateY(-200%) scale(1.5) rotate(-8deg); 
       }
       50% { 
-        transform: translateX(-50%) translateY(-50%) scale(2.0) rotate(8deg); 
+        transform: translate(0%, -100vh) scale(2.2) rotate(12deg); 
+        position: fixed; left: 50%; top: 50%; 
       }
-      80% { 
-        transform: translateX(-50%) translateY(20%) scale(1.4) rotate(-3deg); 
+      75% { 
+        transform: translate(0%, -60vh) scale(1.6) rotate(0deg); 
       }
       100% { 
-        transform: translateX(-50%) translateY(40%) scale(1.15) rotate(0deg); 
-        z-index: 50; 
+        transform: translate(0%, -20vh) scale(1.2) rotate(0deg); 
+        position: absolute; left: 50%; top: 0; 
+        z-index: 50;
       }
     }
     #rhad-img.jump {
-      animation: rhad-jump-leap 1.0s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
+      animation: rhad-jump-leap 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards !important;
     }
 
-    /* Landing matches jump end position perfectly */
+    /* Landing: bounces DOWN from jump end position to center above text */
     @keyframes rhad-land {
       0% { 
-        transform: translateX(-50%) translateY(-40px) scale(1.15) rotate(0deg); 
+        position: absolute; 
+        left: 50%; 
+        top: 0; 
+        transform: translateX(-50%) translateY(-20vh) scale(1.2) rotate(0deg); 
         opacity: 1; 
       }
-      30% { 
-        transform: translateX(-50%) translateY(8px) scale(1.25) rotate(2deg); 
+      25% { 
+        transform: translateX(-50%) translateY(-15vh) scale(1.3) rotate(2deg); 
       }
-      60% { 
-        transform: translateX(-50%) translateY(-4px) scale(1.08); 
+      50% { 
+        transform: translateX(-50%) translateY(-8vh) scale(1.1) rotate(-1deg); 
       }
-      80% { 
-        transform: translateX(-50%) translateY(2px) scale(1.02); 
+      75% { 
+        transform: translateX(-50%) translateY(-2vh) scale(1.05); 
       }
       100% { 
-        transform: translateX(-50%) translateY(0px) scale(1) rotate(0deg); 
+        position: relative; 
+        left: 50%; 
+        transform: translateX(-50%) translateY(0) scale(1) rotate(0deg); 
       }
     }
     .rhad-landing {
-      animation: rhad-land 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-      width: 96px !important;  /* Slightly larger for landing */
+      animation: rhad-land 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards !important;
+      width: 96px !important;
       height: 96px !important;
-      position: relative !important;
-      left: 50% !important;
-      transform-origin: center !important;
+      object-fit: contain;
     }
 
     @keyframes page-shake {
@@ -200,7 +206,7 @@
     </div>
   </section>
 
-  <!-- BAND SECTION - FIXED ANIMATIONS -->
+  <!-- BAND SECTION - PERFECT JUMP TO CENTER -->
   <section class="py-16 bg-repores-black text-repores-white">
     <div class="container mx-auto px-4 text-center mb-12">
       <h3 class="text-3xl font-bold mb-8">THE BAND</h3>
@@ -239,9 +245,10 @@
         </div>
       </div>
 
+      <!-- Rhad landing spot - centered above text -->
       <div id="rhad-info" class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out">
         <div class="flex flex-col items-center">
-          <img src="RHAD.png" id="rhad-landing-img" alt="Rhad" class="w-24 h-24 mb-4 opacity-0 mx-auto" style="aspect-ratio: 1/1; object-fit: contain;" />
+          <img src="RHAD.png" id="rhad-landing-img" alt="Rhad" class="w-24 h-24 mb-4 opacity-0 mx-auto" style="width: 96px; height: 96px; object-fit: contain; aspect-ratio: 1/1;" />
           <h4 class="text-2xl font-bold text-repores-purple mb-2">Meet Rhad 🐶</h4>
           <p class="max-w-xl mx-auto text-base text-repores-white opacity-90">
             Rhad is The Repores' loyal mascot and spirit animal — equal parts chaos and charm.
@@ -286,7 +293,7 @@
     </div>
   </footer>
 
-  <!-- Script unchanged - CSS handles all animation perfection -->
+  <!-- Updated timing for new jump duration -->
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const calContainer = document.getElementById('cal-container');
@@ -331,6 +338,7 @@
         rhadImg.classList.add('jump');
         rhadImg.style.pointerEvents = 'none';
 
+        // Jump ends, then landing starts
         setTimeout(() => {
           rhadInfo.classList.remove('opacity-0', 'max-h-0');
           rhadInfo.classList.add('opacity-100');
@@ -343,7 +351,7 @@
           setTimeout(() => html.classList.remove('page-shake'), 500);
 
           rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 1000); // Matches new jump duration
+        }, 1200); // Matches jump duration
       });
     });
   </script>
