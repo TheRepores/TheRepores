@@ -64,40 +64,40 @@
       object-fit: contain;
       transform: translateX(-50%) translateY(0);
       z-index: 10;
-      /* transition removed so keyframes fully control transform */
+      /* no transition – keyframes control transform */
       pointer-events: none;
       opacity: 0;
     }
 
-    /* Peek */
+    /* Peek – now aligned with jump start */
     #rhad-img.peek {
-      transform: translateX(-50%) translateY(-120%);
+      transform: translateX(-50%) translateY(-80%);
       z-index: 20;
       opacity: 1;
     }
 
-    /* Jump: super-smooth, many keyframes, always visible */
+    /* Jump: smooth arc, always visible, stays near viewport */
     @keyframes rhad-jump-leap {
-      0%   { transform: translateX(-50%) translateY(-120%) scale(1);   z-index: 40; }
-      5%   { transform: translateX(-50%) translateY(-135%) scale(1.2); }
-      10%  { transform: translateX(-50%) translateY(-150%) scale(1.4); }
-      15%  { transform: translateX(-50%) translateY(-165%) scale(1.7); }
-      20%  { transform: translateX(-50%) translateY(-180%) scale(2.0); }
-      25%  { transform: translateX(-50%) translateY(-195%) scale(2.3); }
-      30%  { transform: translateX(-50%) translateY(-205%) scale(2.6); }
-      35%  { transform: translateX(-50%) translateY(-215%) scale(3.0); }
-      40%  { transform: translateX(-50%) translateY(-220%) scale(3.4); }
-      45%  { transform: translateX(-50%) translateY(-220%) scale(3.8); }
-      50%  { transform: translateX(-50%) translateY(-215%) scale(4.0); }
-      55%  { transform: translateX(-50%) translateY(-205%) scale(3.8); }
-      60%  { transform: translateX(-50%) translateY(-190%) scale(3.4); }
-      65%  { transform: translateX(-50%) translateY(-170%) scale(3.0); }
-      70%  { transform: translateX(-50%) translateY(-145%) scale(2.6); }
-      75%  { transform: translateX(-50%) translateY(-125%) scale(2.2); }
-      80%  { transform: translateX(-50%) translateY(-110%) scale(1.9); }
-      85%  { transform: translateX(-50%) translateY(-95%)  scale(1.7); }
-      90%  { transform: translateX(-50%) translateY(-88%)  scale(1.5); }
-      95%  { transform: translateX(-50%) translateY(-84%)  scale(1.45); }
+      0%   { transform: translateX(-50%) translateY(-80%)  scale(1);   z-index: 40; }
+      5%   { transform: translateX(-50%) translateY(-95%)  scale(1.2); }
+      10%  { transform: translateX(-50%) translateY(-110%) scale(1.4); }
+      15%  { transform: translateX(-50%) translateY(-120%) scale(1.6); }
+      20%  { transform: translateX(-50%) translateY(-130%) scale(1.9); }
+      25%  { transform: translateX(-50%) translateY(-140%) scale(2.2); }
+      30%  { transform: translateX(-50%) translateY(-145%) scale(2.5); }
+      35%  { transform: translateX(-50%) translateY(-150%) scale(2.8); }
+      40%  { transform: translateX(-50%) translateY(-150%) scale(3.1); }
+      45%  { transform: translateX(-50%) translateY(-148%) scale(3.3); }
+      50%  { transform: translateX(-50%) translateY(-145%) scale(3.5); }
+      55%  { transform: translateX(-50%) translateY(-140%) scale(3.3); }
+      60%  { transform: translateX(-50%) translateY(-130%) scale(3.0); }
+      65%  { transform: translateX(-50%) translateY(-120%) scale(2.6); }
+      70%  { transform: translateX(-50%) translateY(-110%) scale(2.2); }
+      75%  { transform: translateX(-50%) translateY(-100%) scale(1.9); }
+      80%  { transform: translateX(-50%) translateY(-92%)  scale(1.7); }
+      85%  { transform: translateX(-50%) translateY(-88%)  scale(1.55); }
+      90%  { transform: translateX(-50%) translateY(-84%)  scale(1.45); }
+      95%  { transform: translateX(-50%) translateY(-82%)  scale(1.42); }
       100% { transform: translateX(-50%) translateY(-80%)  scale(1.4); z-index: 50; }
     }
 
