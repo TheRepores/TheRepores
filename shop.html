@@ -260,13 +260,34 @@
     function goToSlide(index) {
       currentSlide = (index + totalSlides) % totalSlides;
       track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      
+      // Update dots: active = repores-purple, inactive = white/50
       dots.forEach((dot, i) => {
-        dot.classList.toggle('bg-white', i === currentSlide);
-        dot.classList.toggle('bg-white/50', i !== currentSlide);
+        if (i === currentSlide) {
+          dot.classList.remove('bg-white/50');
+          dot.classList.add('bg-repores-purple');
+        } else {
+          dot.classList.remove('bg-repores-purple');
+          dot.classList.add('bg-white/50');
+        }
       });
     }
 
     dots.forEach((dot, i) => {
+      dot.addEventListener('mouseenter', () => {
+        if (i !== currentSlide) {
+          dot.classList.remove('bg-white/50');
+          dot.classList.add('bg-repores-red');
+        }
+      });
+      
+      dot.addEventListener('mouseleave', () => {
+        if (i !== currentSlide) {
+          dot.classList.remove('bg-repores-red');
+          dot.classList.add('bg-white/50');
+        }
+      });
+      
       dot.addEventListener('click', () => {
         goToSlide(i);
         resetAutoSlide();
@@ -298,6 +319,7 @@
 
   ['wearables-carousel', 'nonwearables-carousel', 'media-carousel', 'bandcamp-carousel'].forEach(initCarousel);
 </script>
+
 
 </body>
 </html>
