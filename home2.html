@@ -119,13 +119,13 @@
     }
 
     .rhad-landing {
-      position: relative;
-      left: 50%;
-      transform: translateX(-50%) translateY(0);
-      animation: rhad-land 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-      width: 96px;
-      height: 96px;
-      object-fit: contain;
+      animation: rhad-land 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      width: 96px !important;  /* Slightly larger for landing */
+      height: 96px !important;
+      position: relative !important;
+      left: 50% !important;
+      transform-origin: center !important;
+
     }
 
     @keyframes page-shake {
