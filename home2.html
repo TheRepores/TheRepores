@@ -66,37 +66,32 @@
       z-index: 10;
       transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
       pointer-events: none;
-      opacity: 0;            /* invisible when hidden */
+      opacity: 0; /* invisible when hidden */
     }
 
-    /* Peek (keep as-is, since you said it's perfect) */
+    /* Peek – already good */
     #rhad-img.peek {
       transform: translateX(-50%) translateY(-120%);
       z-index: 20;
-      opacity: 1;            /* only here he becomes visible */
+      opacity: 1;
     }
 
-    /* Jump: NO opacity changes – always visible */
+    /* Jump: no opacity changes – always visible */
     @keyframes rhad-jump-leap {
       0% {
-        /* start from peek position above CL.png */
         transform: translateX(-50%) translateY(-120%) scale(1);
         z-index: 40;
       }
       25% {
-        /* higher above CL, moving toward viewer */
         transform: translateX(-50%) translateY(-190%) scale(1.4);
       }
       50% {
-        /* apex of jump, clearly over CL + Cal text */
         transform: translateX(-50%) translateY(-260%) scale(1.8);
       }
       75% {
-        /* coming down toward the Rhad text region */
         transform: translateX(-50%) translateY(-150%) scale(1.5);
       }
       100% {
-        /* end above the final landing area (still centered) */
         transform: translateX(-50%) translateY(-80%) scale(1.2);
         z-index: 50;
       }
@@ -226,14 +221,16 @@
           <p class="text-sm text-repores-white opacity-80">Lead Guitar & Vocals</p>
         </div>
 
-        <!-- Cal + Rhad -->
-        <div class="relative" id="cal-container">
-          <div id="cal-frame" class="relative inline-block">
-            <img src="CL.png" alt="Cal Lawrence - Drums" class="rounded-lg shadow-lg mx-auto block relative z-30" />
-            <img src="RHAD.png" id="rhad-img" alt="Rhad the Dog" />
+        <!-- Cal + Rhad, aligned like others -->
+        <div id="cal-container">
+          <div class="flex flex-col items-center">
+            <div id="cal-frame" class="relative inline-block">
+              <img src="CL.png" alt="Cal Lawrence - Drums" class="rounded-lg shadow-lg mx-auto block relative z-30" />
+              <img src="RHAD.png" id="rhad-img" alt="Rhad the Dog" />
+            </div>
+            <h4 class="mt-4 font-bold text-lg">Cal Lawrence</h4>
+            <p class="text-sm text-repores-white opacity-80">Drums & Percussion</p>
           </div>
-          <h4 class="mt-4 font-bold text-lg">Cal Lawrence</h4>
-          <p class="text-sm text-repores-white opacity-80">Drums & Percussion</p>
         </div>
 
         <div>
@@ -249,7 +246,7 @@
         </div>
       </div>
 
-      <!-- Rhad landing section - PERFECTLY CENTERED -->
+      <!-- Rhad landing section - CENTERED -->
       <div id="rhad-info" class="mt-12 opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out">
         <div class="flex flex-col items-center">
           <img
