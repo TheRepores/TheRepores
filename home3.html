@@ -94,7 +94,7 @@
       }
     }
 
-    /* SPIN LANDING: mirror of spin-out from the left, on same Y as final spot */
+    /* SPIN LANDING: from far left, same Y as final, mirror of spin-out */
     @keyframes rhad-spin-land {
       0% {
         transform: translateX(-110vw) translateY(-120%) scale(1.2) rotate(-720deg);
@@ -110,7 +110,7 @@
         opacity: 1;
       }
       100% {
-        /* same Y axis as his “peek”/band height; the container itself is positioned above the text */
+        /* final spot above the text; container positioning handles its vertical placement */
         transform: translateX(0) translateY(0) scale(1) rotate(0deg);
         opacity: 1;
       }
@@ -248,7 +248,7 @@
     <!-- Rhad info lower in the same black section -->
     <div class="container mx-auto px-4 text-center mt-8">
       <div id="rhad-info" class="opacity-0 max-h-0 overflow-hidden transition-all duration-700 ease-out relative">
-        <div class="mt-4 flex flex-col items-center">
+        <div class="mt-4 flex flex-col items.center">
           <img
             src="RHAD.png"
             id="rhad-landing-img"
@@ -289,8 +289,8 @@
         <div class="flex gap-6">
           <a href="https://www.instagram.com/the_repores/" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
           <a href="https://www.youtube.com/@therepores" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-          <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
-          <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors duration-300 text-2xl" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
+          <a href="https://open.spotify.com/artist/76Jdy3Dfmdnjmh9YA0czZq" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors.duration-300 text-2xl" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+          <a href="https://music.apple.com/gb/artist/the-repores/1693825915" target="_blank" rel="noopener noreferrer" class="text-repores-white hover:text-repores-red transition-colors.duration-300 text-2xl" aria-label="Apple Music"><i class="fab fa-apple"></i></a>
         </div>
       </div>
       <div class="border-t border-gray-700 pt-8 text-center">
@@ -344,7 +344,7 @@
         rhadImg.classList.remove('peek');
         rhadImg.classList.add('spin-out');
 
-        // Phase 2: After spin-out (2s), start landing spin (mirrored)
+        // Phase 2: After spin-out (2s), start landing spin (mirrored from left)
         setTimeout(() => {
           rhadImg.style.opacity = '0';
           rhadImg.style.pointerEvents = 'none';
