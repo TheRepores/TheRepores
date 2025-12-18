@@ -94,7 +94,7 @@
       }
     }
 
-    /* SPIN LANDING: From very left edge -> spin into position above "Meet Rhad" */
+    /* SPIN LANDING: From very left edge -> spin into position above "Meet Rhad" - NO FADE */
     @keyframes rhad-spin-land {
       0% { 
         transform: translateX(-30vw) translateY(20%) scale(0.8) rotate(1080deg); 
@@ -355,11 +355,11 @@
           rhadLandingImg.style.opacity = '1';
           rhadLandingImg.classList.add('spin-land');
           
-          // Phase 3: Shake ONLY after landing spin completes (4s total)
+          // Phase 3: Shake EXACTLY when landing completes (4s total)
           setTimeout(() => {
             html.classList.add('page-shake');
             setTimeout(() => html.classList.remove('page-shake'), 1000);
-          }, 2000); // 2s after landing starts = total 4s
+          }, 2000); // 2s landing animation = shake at exact landing moment
 
           rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 2000); // matches spin-out duration
