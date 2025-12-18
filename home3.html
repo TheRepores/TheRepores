@@ -77,7 +77,7 @@
       opacity: 1;
     }
 
-    /* SPIN OUT: Pop from behind CL -> spin to right edge */
+    /* SPIN OUT: Straight horizontal to right edge */
     @keyframes rhad-spin-out {
       0% { 
         transform: translateX(-50%) translateY(-120%) scale(1.0) rotate(0deg); 
@@ -89,24 +89,24 @@
         opacity: 1; 
       }
       100% { 
-        transform: translateX(110vw) translateY(20vh) scale(1.2) rotate(720deg); 
+        transform: translateX(110vw) translateY(-120%) scale(1.2) rotate(720deg); 
         opacity: 1; 
       }
     }
 
-    /* SPIN LANDING: Appear left edge -> spin into position above "Meet Rhad" */
+    /* SPIN LANDING: From very left edge -> spin into position above "Meet Rhad" */
     @keyframes rhad-spin-land {
       0% { 
-        transform: translateX(-20vw) translateY(80vh) scale(0.8) rotate(1080deg); 
+        transform: translateX(-30vw) translateY(20%) scale(0.8) rotate(1080deg); 
         opacity: 0; 
         z-index: 60;
       }
       30% { 
-        transform: translateX(5vw) translateY(70vh) scale(1.0) rotate(1260deg); 
+        transform: translateX(-10vw) translateY(20%) scale(1.0) rotate(1260deg); 
         opacity: 1; 
       }
       70% { 
-        transform: translateX(2vw) translateY(60vh) scale(1.1) rotate(1350deg); 
+        transform: translateX(-2vw) translateY(20%) scale(1.1) rotate(1350deg); 
         opacity: 1; 
       }
       100% { 
@@ -132,33 +132,6 @@
       80% { transform: translateX(2px); }
     }
     .page-shake { animation: page-shake 1.0s ease-in-out; }
-
-    /* Landing: centered above "Meet Rhad" inside its block */
-    .rhad-landing {
-      position: absolute;
-      left: 50%;
-      top: 0;
-      transform: translateX(-50%) translateY(0);
-      animation: rhad-land 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-      width: 96px;
-      height: 96px;
-      object-fit: contain;
-    }
-
-    @keyframes rhad-land {
-      0% {
-        transform: translateX(-50%) translateY(-60px) scale(1.2);
-      }
-      40% {
-        transform: translateX(-50%) translateY(10px) scale(1.25);
-      }
-      70% {
-        transform: translateX(-50%) translateY(-6px) scale(1.05);
-      }
-      100% {
-        transform: translateX(-50%) translateY(0) scale(1);
-      }
-    }
   </style>
 </head>
 <body class="bg-repores-white text-repores-black font-trebuchet min-h-screen">
@@ -366,11 +339,11 @@
         isActivated = true;
         clearTimeout(hideTimeout);
 
-        // Phase 1: Spin out to right edge
+        // Phase 1: Spin out to right edge (straight horizontal)
         rhadImg.classList.remove('peek');
         rhadImg.classList.add('spin-out');
 
-        // Phase 2: After spin-out, hide original + show landing spin + shake
+        // Phase 2: After spin-out (2s), start landing spin
         setTimeout(() => {
           rhadImg.style.opacity = '0';
           rhadImg.style.pointerEvents = 'none';
@@ -381,9 +354,12 @@
 
           rhadLandingImg.style.opacity = '1';
           rhadLandingImg.classList.add('spin-land');
-
-          html.classList.add('page-shake');
-          setTimeout(() => html.classList.remove('page-shake'), 1000);
+          
+          // Phase 3: Shake ONLY after landing spin completes (4s total)
+          setTimeout(() => {
+            html.classList.add('page-shake');
+            setTimeout(() => html.classList.remove('page-shake'), 1000);
+          }, 2000); // 2s after landing starts = total 4s
 
           rhadInfo.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }, 2000); // matches spin-out duration
